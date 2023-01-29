@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  link: string;
+  subtitle?: string;
+  shortDescription: string;
+}
+
+const { title, link, subtitle, shortDescription } = Astro.props;
+---
+
+<div
+  class="flex justify-start max-w-md rounded-lg overflow-hidden shadow-xl dark:bg-gray-800 bg-gray-200 p-4 mx-auto mb-4"
+>
+  <div class="block">
+    <a
+      href={link}
+      class="hover:text-amber-600 hover:dark:text-amber-500 project-title text-center dark:text-slate-300 text-slate-800"
+    >
+      {title}
+    </a>
+    {
+      subtitle && (
+        <p class="px-1 mt-1 text-sm dark:text-slate-400">{subtitle}</p>
+      )
+    }
+    <p class="text-slate-600 dark:text-slate-500 mb-4">
+      {shortDescription}
+    </p>
+    <a
+      class="ring-2 dark:ring-amber-500 ring-amber-600 text-amber-600 dark:text-amber-500 hover:dark:ring-amber-300 hover:dark:text-amber-300 hover:ring-amber-700 hover:text-amber-700 rounded-lg py-1 px-2"
+      href={link}
+    >
+      Read more &rarr;
+    </a>
+  </div>
+</div>

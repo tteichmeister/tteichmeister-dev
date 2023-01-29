@@ -1,11 +1,10 @@
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import type { FunctionalComponent } from "preact";
 
 
 
-const SmallMenu: FunctionalComponent = () => {
+const SmallMenu: FunctionalComponent<{activeUrl: string}> = ({activeUrl}) => {
     const [isOpen, setOpen] = useState(false); 
-
     function toggleMenu() {
         if (isOpen) {
 
@@ -14,7 +13,14 @@ const SmallMenu: FunctionalComponent = () => {
         }
         setOpen(!isOpen)
     }
-
+    function isActive(href: string){
+        return href === activeUrl || href === activeUrl.replace(/\/$/, "")
+    }
+    function getLinkClass(href: string) {
+        const defaultClass = "uppercase text-3xl "
+        return isActive(href) ? defaultClass +
+              "underline decoration-solid decoration-6 decoration-amber-500" : defaultClass;
+    }
     return (
         <>
             <button className="text-gray-700 w-10 h-10 relative focus:outline-none" aria-label="Toggle Menu" onClick={toggleMenu}>
@@ -29,16 +35,16 @@ const SmallMenu: FunctionalComponent = () => {
                 <div className="fixed h-screen w-full bg-gray-200 dark:bg-gray-900 z-50 left-0 ">
                     <ul className="flex flex-col items-center justify-center text-black dark:text-white my-auto h-3/4 space-y-24">
                         <li>
-                            <a href={'/'} className="uppercase text-3xl underline decoration-solid decoration-6 decoration-amber-500">{'  '} Home {'  '}</a>
+                            <a href={'/'} className={getLinkClass("/")}>{'  '} Home {'  '}</a>
                         </li>
                         <li>
-                            <a href={'/work'} className="uppercase text-3xl">Work</a>
+                            <a href={'/work'} className={getLinkClass("/work")}>Work</a>
                         </li>
                         <li>
-                            <a href={'/projects'} className="uppercase text-3xl">Projects</a>
+                            <a href={'/projects'} className={getLinkClass("/projects")}>Projects</a>
                         </li>
                         <li>
-                            <a href={'/education'} className="uppercase text-3xl">Education</a>
+                            <a href={'/education'} className={getLinkClass("/education")}>Education</a>
                         </li>
                     </ul>
                 </div> 

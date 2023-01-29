@@ -29,7 +29,7 @@ import SmallMenu from "./SmallMenu";
             <ThemeToggle client:load />
           </li>
           <li class="mx-1 mb-1 md:hidden justify-self-end">
-            <SmallMenu client:load />
+            <SmallMenu activeUrl={Astro.url.pathname} client:load />
           </li>
         </ul>
       </li>
