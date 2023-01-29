@@ -1,0 +1,38 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../config";
+import RootLink from "./RootLink.astro";
+import ThemeToggle from "./ThemeToggle";
+import SmallMenu from "./SmallMenu";
+---
+
+<header>
+  <nav class="mb-12">
+    <ul class="flex flex-row list-none items-center md:justify-between">
+      <li>
+        <RootLink>
+          {SITE_TITLE}
+        </RootLink>
+      </li>
+      <li class="w-full">
+        <ul class="flex flex-row justify-end items-center">
+          <li class="hidden md:inline-block">
+            <HeaderLink href={"/work"}>Work</HeaderLink>
+          </li>
+          <li class="hidden md:inline-block">
+            <HeaderLink href={"/projects"}>Projects</HeaderLink>
+          </li>
+          <li class="hidden md:inline-block">
+            <HeaderLink href={"/education"}>Education</HeaderLink>
+          </li>
+          <li class="mb-1">
+            <ThemeToggle client:load />
+          </li>
+          <li class="mx-1 mb-1 md:hidden justify-self-end">
+            <SmallMenu client:load />
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>

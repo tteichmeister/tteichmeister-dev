@@ -1,0 +1,15 @@
+---
+import { OWNER } from "../config";
+const today = new Date();
+---
+
+<footer>
+  &copy; {today.getFullYear()}
+  {OWNER}. All rights reserved.
+</footer>
+<style>
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+</style>
