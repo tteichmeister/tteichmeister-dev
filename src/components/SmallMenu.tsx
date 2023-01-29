@@ -26,10 +26,10 @@ const SmallMenu: FunctionalComponent = () => {
             </button>
 
             {isOpen ? 
-                <div className="fixed h-screen w-full bg-gray-50 dark:bg-black z-50 left-0 ">
+                <div className="fixed h-screen w-full bg-gray-200 dark:bg-gray-900 z-50 left-0 ">
                     <ul className="flex flex-col items-center justify-center text-black dark:text-white my-auto h-3/4 space-y-24">
                         <li>
-                            <a href={'/'} className="uppercase text-3xl underline decoration-solid decoration-6 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">{'  '} Home {'  '}</a>
+                            <a href={'/'} className="uppercase text-3xl underline decoration-solid decoration-6 decoration-teal-500">{'  '} Home {'  '}</a>
                         </li>
                         <li>
                             <a href={'/work'} className="uppercase text-3xl">Work</a>
