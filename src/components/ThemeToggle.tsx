@@ -21,13 +21,13 @@ const ThemeToggle: FunctionalComponent = () => {
         <button
             aria-label="Toggle theme"
             type="button"
-            class="w-9 h-9 group rounded-lg dark:bg-gray-900 flex items-center justify-center transition-all"
+            class="w-9 h-9 group rounded-lg flex items-center justify-center transition-all"
             onClick={toggleTheme}
         >
             <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="w-5 h-5 text-gray-700 dark:text-gray-200 stroke-current fill-none group-hover:text-teal-600 group-hover:dark:text-teal-500"
+            class="w-5 h-5 text-gray-700 dark:text-gray-200 stroke-current fill-none group-hover:text-amber-600 group-hover:dark:text-amber-500"
             >
             {
                 theme === 'dark' ? (
