@@ -1,4 +1,5 @@
 
+
 import { useEffect, useState } from "preact/hooks";
 import type { FunctionalComponent } from "preact";
 
@@ -27,7 +28,7 @@ const ThemeToggle: FunctionalComponent = () => {
             <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="w-5 h-5 text-gray-700 dark:text-gray-200 stroke-current fill-none group-hover:text-amber-600 group-hover:dark:text-amber-500"
+            class="theme-toggle"
             >
             {
                 theme === 'dark' ? (

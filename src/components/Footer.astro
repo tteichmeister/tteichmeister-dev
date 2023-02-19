@@ -4,8 +4,13 @@ const today = new Date();
 ---
 
 <footer>
-  &copy; {today.getFullYear()}
-  {OWNER}. All rights reserved.
+  <div class="font-poppins text-gray-700 dark:text-slate-400">
+    &copy; {today.getFullYear()}
+    <a href="/" class="text-teal-600 dark:text-teal-500">
+      {OWNER}.
+    </a>
+    All rights reserved.
+  </div>
 </footer>
 <style>
   footer {

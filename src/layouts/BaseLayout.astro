@@ -13,11 +13,9 @@ import "@fontsource/raleway";
   <head>
     <MetaHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body
-    class="h-screen bg-gray-200 dark:bg-gray-900 text-black dark:text-white"
-  >
+  <body class={`h-screen background-color text-default`}>
     <Header title={SITE_TITLE} />
-    <main>
+    <main class="text-default">
       <slot />
     </main>
     <Footer />

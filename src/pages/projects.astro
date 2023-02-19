@@ -2,17 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
+
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.id - a.data.id
 );
 ---
 
 <BaseLayout>
-  <h1
-    class="text-center uppercase mb-4 text-4xl text-slate-800 dark:text-slate-300 underline decoration-amber-600 dark:decoration-amber-500 decoration-2 underline-offset-2"
-  >
-    Projects:
-  </h1>
+  <h1 class="text-center mb-4 text-4xl heading-2 underline-text">Projects:</h1>
   <ul class="w-full">
     {
       projects.map((project) => (

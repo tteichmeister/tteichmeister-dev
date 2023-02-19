@@ -1,4 +1,6 @@
 ---
+
+
 const { href } = Astro.props;
 
 const { pathname } = Astro.url;
@@ -7,20 +9,12 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 const defaultClass =
   "uppercase p-1 sm:px-3 sm:py-2 rounded-lg transition-all tracking-wide";
 
-const activeClass = "font-semibold text-gray-800 dark:text-slate-300";
-const inactiveClass = "font-normal text-gray-700 dark:text-slate-400";
+const activeClass = `font-semibold text-secondary underline-text`;
+const inactiveClass = `font-normal text-default`;
 const linkClass = isActive ? activeClass : inactiveClass;
 ---
 
-<a
-  href={href}
-  class:list={[
-    defaultClass,
-    linkClass,
-    "hover:ring-amber-600 hover:ring-2 hover:text-amber-600",
-    "hover:dark:ring-amber-500 hover:dark:text-amber-500",
-  ]}
->
+<a href={href} class:list={[defaultClass, linkClass, "hover-link"]}>
   <slot />
 </a>
 
