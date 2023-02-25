@@ -21,8 +21,11 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
         <h2
           class={`text-lg text-secondary tracking-wider ml-2 text-center md:text-start`}
         >
-          I'm a <span class="underline-text">Software Developer</span> from Salzburg
-          🇦🇹
+          I'm a <a
+            href="https://github.com/tteichmeister"
+            class="underline-text hover:text-teal-700 dark:hover:text-teal-500"
+            >Software Developer</a
+          > from Salzburg 🇦🇹
         </h2>
       </div>
       <div
@@ -38,7 +41,7 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
       </div>
     </div>
   </div>
-  <p class="mb-8">
+  <p class="mb-8 text-lg md:text-base">
     I am an enthusiastic software developer since 11+ years. I mainly work with
     the technologies C++ and C# in my work but I'm enthusiastic about different
     areas and especially the web area.
