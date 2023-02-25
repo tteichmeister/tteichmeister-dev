@@ -4,12 +4,21 @@ const today = new Date();
 ---
 
 <footer>
-  <div class="font-poppins text-gray-700 dark:text-slate-400">
+  <div class="my-8 text-gray-700 dark:text-slate-400">
     &copy; {today.getFullYear()}
-    <a href="/" class="text-teal-600 dark:text-teal-500">
+    <a href="/" class="text-700 dark:text-teal-500">
       {OWNER}.
     </a>
     All rights reserved.
+    <br />
+    <div class="text-sm mt-2">
+      Built with
+      <a href="https://astro.build/" class="underline-text">Astro</a>, <a
+        href="https://tailwindcss.com/"
+        class="underline-text">Tailwind CSS</a
+      >, <a href="https://preactjs.com/" class="underline-text">Preact</a> and hosted
+      on <a href="https://vercel.com/" class="underline-text">Vercel</a>
+    </div>
   </div>
 </footer>
 <style>

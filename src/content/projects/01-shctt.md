@@ -21,7 +21,9 @@ tags:
   ]
 ---
 
-## How ?
+## Table of Contents
+
+## How
 
 While working on my Master's thesis at the University of Applied Sciences Upper Austria, I came across the advertisement for collaboration on this research project. The research project was conducted in cooperation with Microsoft Research Cambridge and deals with the analysis of collaboration processes.
 
@@ -43,6 +45,6 @@ For the analysis of the video data the framework PSI (Platform for Situated Inte
 
 For the actual analysis of the data, various Microsoft Cognitive Services and also Google Cloud Services were then used. In addition, other frameworks such as [Dlib](http://dlib.net/), [Microsoft Project Tokyo](https://www.microsoft.com/en-us/research/project/project-tokyo/) were used.
 
-## Results:
+## Results
 
 Through the research project, a prototype for automated or semi-automated analysis of video materials was developed. In addition, a scientific [paper](https://www.microsoft.com/en-us/research/publication/semi-automated-analysis-of-collaborative-interaction-are-we-there-yet/) was prepared and finally published in December 2022.

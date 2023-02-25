@@ -1,6 +1,4 @@
 ---
-
-
 interface Props {
   title: string;
   link: string;
@@ -12,7 +10,7 @@ const { title, link, subtitle, shortDescription } = Astro.props;
 ---
 
 <a
-  class={`flex justify-start max-w-md rounded-lg shadow-xl p-6 mx-auto card-bg mb-4`}
+  class={`flex justify-start rounded-lg shadow-xl p-6 mx-auto card-bg mb-4 hover:shadow-2xl`}
   href={link}
 >
   <div class="block">

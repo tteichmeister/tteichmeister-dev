@@ -9,13 +9,15 @@ const workExperiences = (await getCollection("work")).sort(
 ---
 
 <BaseLayout>
-  <h1 class="text-center uppercase mb-4 text-4xl heading-2 underline-text">
-    Work Experiences:
+  <h1
+    class="text-center uppercase mb-4 mx-auto text-4xl heading-1 max-w-md section-heading"
+  >
+    Work Experiences
   </h1>
   <ul class="w-full">
     {
       workExperiences.map((work) => (
-        <li>
+        <li class="max-w-md mx-auto">
           <Card
             title={`${work.data.title}, ${work.data.company}`}
             link={`/work/${work.slug}`}

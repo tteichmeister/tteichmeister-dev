@@ -1,6 +1,6 @@
 ---
 import MetaHead from "../components/MetaHead.astro";
-import Header from "../components/Header.astro";
+import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import "@fontsource/poppins";
@@ -14,7 +14,7 @@ import "@fontsource/raleway";
     <MetaHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class={`h-screen background-color text-default`}>
-    <Header title={SITE_TITLE} />
+    <NavBar title={SITE_TITLE} />
     <main class="text-default">
       <slot />
     </main>

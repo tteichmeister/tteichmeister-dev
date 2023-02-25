@@ -9,7 +9,27 @@ import tailwind from "@astrojs/tailwind";
 import preact from "@astrojs/preact";
 
 // https://astro.build/config
+
+import remarkToc from "remark-toc";
+import remarkCollapse from "remark-collapse";
+
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), tailwind(), preact()]
+  integrations: [mdx(), sitemap(), tailwind(), preact()], 
+  markdown: {
+    remarkPlugins: [
+      remarkToc,
+      [
+        remarkCollapse,
+        {
+          test: "Table of contents",
+        },
+      ],
+    ],
+    shikiConfig: {
+      theme: "github-dark",
+      wrap: true,
+    },
+    extendDefaultPlugins: true,
+  },
 });

@@ -12,6 +12,7 @@ const projectsCollection = defineCollection({
         employer: z.string().optional(),
         projectLink: z.string().url(),
         tags: z.array(z.string()),
+        draft: z.boolean().default(false)
     }),
 });
 
@@ -26,6 +27,7 @@ const workCollection = defineCollection({
       toDate: z.string().optional(),
       companyLink: z.string().url(),
       tags: z.array(z.string()),
+      draft: z.boolean().default(false)
   }),
 });
 

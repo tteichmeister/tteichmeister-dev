@@ -1,6 +1,4 @@
 ---
-
-
 const { href } = Astro.props;
 
 const { pathname } = Astro.url;
@@ -17,15 +15,3 @@ const linkClass = isActive ? activeClass : inactiveClass;
 <a href={href} class:list={[defaultClass, linkClass, "hover-link"]}>
   <slot />
 </a>
-
-<!-- <a
-  href={href}
-  class:list={[
-    defaultClass,
-    linkClass,
-    "hover:bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:bg-clip-text hover:text-transparent",
-    "dark:hover:bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 dark:hover:bg-clip-text dark:hover:text-transparent",
-  ]}
->
-  <slot />
-</a> -->

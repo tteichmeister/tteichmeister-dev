@@ -9,11 +9,15 @@ const projects = (await getCollection("projects")).sort(
 ---
 
 <BaseLayout>
-  <h1 class="text-center mb-4 text-4xl heading-2 underline-text">Projects:</h1>
+  <h1
+    class="text-center uppercase mb-4 mx-auto text-4xl heading-1 max-w-md section-heading"
+  >
+    Projects
+  </h1>
   <ul class="w-full">
     {
       projects.map((project) => (
-        <li>
+        <li class="max-w-md mx-auto">
           <Card
             title={project.data.title}
             link={`/projects/${project.slug}`}

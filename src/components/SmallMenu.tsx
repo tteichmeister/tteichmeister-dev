@@ -44,9 +44,9 @@ const SmallMenu: FunctionalComponent<{activeUrl: string}> = ({activeUrl}) => {
                         <li>
                             <a href={'/projects'} className={getLinkClass("/projects")}>Projects</a>
                         </li>
-                        <li>
+                        {/* <li>
                             <a href={'/education'} className={getLinkClass("/education")}>Education</a>
-                        </li>
+                        </li> */}
                     </ul>
                 </div> 
             : null}

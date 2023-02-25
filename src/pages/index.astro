@@ -1,7 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Avatar from "../images/avatar.jpeg";
+import { getProjects, getWorkExperiences } from "../utils/api";
+import Card from "../components/Card.astro";
 
+const maxCount = 2;
+const latestProjects = await getProjects(maxCount);
+const latestWorkExperiences = await getWorkExperiences(maxCount);
 ---
 
 <BaseLayout>
@@ -33,47 +38,69 @@ import Avatar from "../images/avatar.jpeg";
       </div>
     </div>
   </div>
-  <p>
+  <p class="mb-8">
     I am an enthusiastic software developer since 11+ years. I mainly work with
     the technologies C++ and C# in my work but I'm enthusiastic about different
     areas and especially the web area.
   </p>
-  <!-- 
-  <p>
-    This template comes with a few integrations already configured in your
-    <code>astro.config.mjs</code> file. You can customize your setup with
-    <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-    like Tailwind, React, or Vue to your project.
-  </p>
-  <p>Here are a few ideas on how to get started with the template:</p>
-  <ul>
-    <li>Edit this page in <code>src/pages/index.astro</code></li>
-    <li>
-      Edit the site header items in <code>src/components/Header.astro</code>
-    </li>
-    <li>
-      Add your name to the footer in <code>src/components/Footer.astro</code>
-    </li>
-    <li>
-      Check out the included blog posts in <code>src/pages/blog/</code>
-    </li>
-    <li>
-      Customize the blog post page layout in <code
-        >src/layouts/BlogPost.astro</code
-      >
-    </li>
-  </ul>
-  <p>
-    Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-      >read the docs
-    </a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-  </p>
-  <p>
-    Looking for a blog template with a bit more personality? Check out <a
-      href="https://github.com/Charca/astro-blog-template"
-      >astro-blog-template
-    </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-  </p> -->
+  <section id="latest-projects" class="my-12">
+    <h2 class="heading-1 text-3xl mb-4 mx-2 section-heading">
+      Latest projects
+    </h2>
+    <ul class="w-full">
+      {
+        latestProjects.map((project) => (
+          <li>
+            <Card
+              title={project.data.title}
+              link={`/projects/${project.slug}`}
+              shortDescription={project.data.description}
+              subtitle={`${project.data.fromDate} - ${project.data.toDate}${
+                project.data.location ? " | " + project.data.location : ""
+              }`}
+            />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-6 mx-6 flex items-center mb-8">
+      <a href="/projects" class="justify-center">
+        <span class="text-xl hover:text-teal-700 hover:dark:text-teal-400"
+          >All projects</span
+        >
+        <span class="text-teal-700 dark:text-teal-500">&rarr;</span>
+      </a>
+    </div>
+  </section>
+  <section id="latest-work-experiences">
+    <h2 class="heading-1 text-3xl mb-4 mx-2 section-heading">
+      Latest work experiences
+    </h2>
+    <ul class="w-full">
+      {
+        latestWorkExperiences.map((work) => (
+          <li>
+            <Card
+              title={`${work.data.title}, ${work.data.company}`}
+              link={`/work/${work.slug}`}
+              shortDescription={work.data.shortDescription}
+              subtitle={`${work.data.fromDate} - ${
+                work.data.toDate ? work.data.toDate : "now"
+              }${work.data.location ? " | " + work.data.location : ""}`}
+            />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-6 mx-6 flex items-center">
+      <a href="/work" class="justify-center">
+        <span class="text-xl hover:text-teal-700 hover:dark:text-teal-400"
+          >All experiences</span
+        >
+        <span class="text-teal-700 dark:text-teal-500">&rarr;</span>
+      </a>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  size: "max-w-xs" | "w-full" | "max-w-xl";
+}
+
+const { size = "max-w-xs" } = Astro.props;
+---
+
+<div
+  class={`ring-2 dark:ring-teal-500 ring-teal-700 rounded-lg px-3 p-3 flex items-center gap-4 text-secondary w-full my-4`}
+>
+  <slot />
+</div>

@@ -1,7 +1,12 @@
 ---
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
+import DateRange from "../../components/DateRange.astro";
+import ProjectLink from "../../components/ProjectLink.astro";
+import Location from "../../components/Location.astro";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tag from "../../components/Tag.astro";
+
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((entry) => ({
@@ -9,17 +14,34 @@ export async function getStaticPaths() {
     props: { entry },
   }));
 }
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
 <BaseLayout>
-  <h1 class={`text-3xl text-secondary mb-6 `}>
+  <h1 class={`text-3xl text-secondary mb-6`}>
     {entry.data.title}
   </h1>
-  <div
-    class={`text-default prose lg:prose-lg prose-a:text-teal-600 dark:prose-invert dark:prose-a:text-teal-500 prose-headings:text-slate-800 dark:prose-headings:text-slate-300`}
-  >
-    <Content />
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-0 md:gap-4">
+    <DateRange from={entry.data.fromDate} to={entry.data.toDate} />
+    {entry.data.location && <Location location={entry.data.location} />}
   </div>
+  <div>
+    {
+      entry.data.employer && (
+        <ProjectLink link={entry.data.projectLink} name={entry.data.employer} />
+      )
+    }
+  </div>
+  <article
+    class={`text-default prose-sm md:prose-md lg:prose-lg prose-a:text-teal-700 dark:prose-a:text-teal-500 prose-headings:text-slate-800 dark:prose-headings:text-slate-300`}
+  >
+    <div class="">
+      <Content />
+    </div>
+    <div class="my-12 flex flex-wrap">
+      {entry.data.tags.map((tag: string) => <Tag tag={tag} />)}
+    </div>
+  </article>
 </BaseLayout>
