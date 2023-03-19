@@ -6,6 +6,7 @@ import Location from "../../components/Location.astro";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
+import HistoryBack from "../../components/HistoryBack.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -20,6 +21,7 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout>
+  <HistoryBack />
   <h1 class={`text-3xl text-secondary mb-6`}>
     {entry.data.title}
   </h1>

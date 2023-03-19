@@ -2,7 +2,7 @@
 id: 1
 slug: "shctt"
 title: "SHCTT - Supporting Hybrid Collaboration for the Teams of Tomorrow"
-description: "<placeholder description>"
+description: "I was a software developer on a research project with the University of Applied Sciences Upper Austria, in partnership with Microsoft Research Cambridge, investigating the automated analysis of collaboration processes."
 fromDate: "August 2020"
 toDate: "August 2021"
 location: "Hagenberg im Mühlkreis, AUT"
@@ -15,36 +15,50 @@ tags:
     "WPF",
     "Microsoft Cognitive Services",
     "Google Cloud",
-    "GitHub",
     "Microsoft Project Tokyo",
+    "Microsoft PSI",
+    "MongoDB",
+    "GitHub",
     "Docker",
   ]
 ---
 
 ## Table of Contents
 
-## How
+## TL; DR
 
-While working on my Master's thesis at the University of Applied Sciences Upper Austria, I came across the advertisement for collaboration on this research project. The research project was conducted in cooperation with Microsoft Research Cambridge and deals with the analysis of collaboration processes.
+Between August 2020 and August 2021, I engaged in a research project alongside my employment at [Allplan Software Engineering GmbH](https://www.allplan.com/at/loesungen/herstellung-von-fertigteilen). The project, which required a commitment of 20 hours per week, was conducted in partnership with the [PEEC research group](https://peec.fh-hagenberg.at/) at the University of Applied Sciences Upper Austria. The focus of the project was to investigate the automated analysis of collaboration processes, and I was responsible for the implementation of the prototype.
 
-The task sounded challenging and exciting, which is why I then applied for the research project. After my master's degree ended in July 2020, I started working on the research project directly in August 2020. I was employed for 20 hours on the project, which meant that I could do this in parallel with my existing work at [Allplan Software Engineering GmbH](https://www.allplan.com/at/loesungen/herstellung-von-fertigteilen).
+During the project, we utilized various AI services and frameworks, with the implementation of the prototype being mainly done through programming languages C# and Python. The project's successful outcome was a [research paper](https://www.microsoft.com/en-us/research/publication/semi-automated-analysis-of-collaborative-interaction-are-we-there-yet/) that was published in 2022. It is noteworthy that the research was carried out in collaboration with [Microsoft Research Cambridge](https://www.microsoft.com/en-us/research/lab/microsoft-research-cambridge/).
 
-## Aim
+## How I came to the project?
 
-It was investigated whether the analysis of these processes can be automated or partially automated. The reason for this is the enormous amount of resources required for the manual analysis of these processes. Mainly image and video materials are used for the analysis.
+During my Master's thesis at the University of Applied Sciences Upper Austria, I came across the job advertisement seeking software developers for this research project. The position was particularly timely, given the changes in collaboration due to home office and hybrid work models.
 
-Together with my colleagues I not only created a prototype for the analysis but also investigated how the different types of collaborations can differ. Subsequently, the information can be used to generate recommendations for action for collaboration between teams.
+Despite being employed at Allplan Software Engineering GmbH, I negotiated a reduction in my working hours to take on the research project. Following the completion of my Master's degree in July, I began working on the project in August.
 
-The big challenge is to be able to recognize these automatically.
+## The challenges
 
-## The prototype
+The automated analysis of collaboration processes may seem simple at first glance, but it is a very complex task.
 
-Various technologies were used for the implementation of the prototype. For the development of the prototype mainly C# and Python were used as programming languages. The implementation of a user interface was created with the help of WPF, with which the user can carry out the analysis, but also verify the analyzed results or change them.
+The aim is to recognize and analyze the different types of collaboration processes in image and video material. However, this also turns out to be a challenge for humans, which is why the analysis so far has been a time-consuming task. However, this is also a challenge for automated systems as the different processes are sometimes difficult to distinguish from each other. This task is further complicated by the way collaboration has changed, especially in recent years through hybrid or remote collaboration.
 
-For the analysis of the video data the framework PSI (Platform for Situated Intelligence) from Microsoft was used, which was mainly used to process the image and audio data of the video materials.
+## The project
 
-For the actual analysis of the data, various Microsoft Cognitive Services and also Google Cloud Services were then used. In addition, other frameworks such as [Dlib](http://dlib.net/), [Microsoft Project Tokyo](https://www.microsoft.com/en-us/research/project/project-tokyo/) were used.
+Throughout the course of our project, our team worked in close collaboration with researchers at Microsoft Research Cambridge. We engaged in a dynamic and ongoing exchange of ideas and strategies aimed at finding innovative solutions to our project's objectives.
 
-## Results
+My main role in this project was that of a software developer, responsible for the creation and implementation of the system. The implementation of the system was undoubtedly a crucial aspect of the project, but equally important was the investigation into the potential for automatic recognition of various collaboration processes.
 
-Through the research project, a prototype for automated or semi-automated analysis of video materials was developed. In addition, a scientific [paper](https://www.microsoft.com/en-us/research/publication/semi-automated-analysis-of-collaborative-interaction-are-we-there-yet/) was prepared and finally published in December 2022.
+As part of our work, we had the opportunity to experiment with diverse technologies and cutting-edge AI services, allowing us to compare and contrast their effectiveness in relation to our project's goals. Additionally, we were able to use partially experimental frameworks developed by Microsoft in our prototype.
+
+By the end of the year we successfully completed the prototype. To test its functionality, we conducted a comprehensive user study in which the prototype was thoroughly assessed. Ultimately, our work resulted in a research paper, published in December of 2022, which captured our project's contributions and achievements.
+
+## Paper
+
+> T. Neumayr, M. Augstein, J. Schönböck, S. Rintel, H. Leeb and T. Teichmeister, "Semi-Automated Analysis of Collaborative Interaction-Are We There Yet?", Proceedings of the ACM on Human-Computer Interaction (PACM HCI), vol. 6, no. ISS, pp. 354-380, 2022, doi: https://doi.org/10.1145/3567724.
+
+## Additional Links
+- [PEEC - SHCTT - Supporting Hybrid Collaboration for the Teams of Tomorrow](https://peec.fh-hagenberg.at/projects/projectdetail/4?cHash=fdba6c8ebe4dab66737f1e65d6aee185)
+- [Microsoft Platform for Situated Intelligence (PSI)](https://github.com/microsoft/psi)
+
+- [Microsoft Project Tokyo](https://www.microsoft.com/en-us/research/project/project-tokyo/)

@@ -1,6 +1,12 @@
 ---
 import { getCollection } from "astro:content";
+import DateRange from "../../components/DateRange.astro";
+import Location from "../../components/Location.astro";
+import HistoryBack from "../../components/HistoryBack.astro";
+import ProjectLink from "../../components/ProjectLink.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tag from "../../components/Tag.astro";
+
 export async function getStaticPaths() {
   const workExperiences = await getCollection("work");
   return workExperiences.map((entry) => ({
@@ -13,6 +19,29 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout>
-  <h1>{entry.data.title}</h1>
-  <Content />
+  <HistoryBack />
+  <h1 class={`text-3xl text-secondary mb-6`}>
+    {entry.data.title}
+  </h1>
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-0 md:gap-4">
+    <DateRange from={entry.data.fromDate} to={entry.data.toDate} />
+    {entry.data.location && <Location location={entry.data.location} />}
+  </div>
+  <div>
+    {
+      entry.data.company && (
+        <ProjectLink link={entry.data.companyLink} name={entry.data.company} />
+      )
+    }
+  </div>
+  <article
+    class={`text-default prose-lg md:prose-base prose-a:text-teal-700 dark:prose-a:text-teal-500 prose-headings:text-slate-800 dark:prose-headings:text-slate-300`}
+  >
+    <div class="">
+      <Content />
+    </div>
+    <div class="my-12 flex flex-wrap">
+      {entry.data.tags.map((tag: string) => <Tag tag={tag} />)}
+    </div>
+  </article>
 </BaseLayout>
