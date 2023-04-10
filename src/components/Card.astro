@@ -9,18 +9,35 @@ interface Props {
 const { title, link, subtitle, shortDescription } = Astro.props;
 ---
 
-<a
-  class={`flex justify-start rounded-lg shadow-xl p-6 mx-auto card-bg mb-4 hover:shadow-2xl`}
-  href={link}
->
+<div class={`flex justify-start rounded-lg p-6 mx-auto card-bg mb-4`}>
   <div class="block">
     <h3 class={`project-title text-secondary`}>
       {title}
     </h3>
-    {subtitle && <h4 class={`px-1 mt-2 text-sm text-default`}>{subtitle}</h4>}
+    {
+      subtitle && (
+        <h4 class={`px-1 mt-2 text-sm text-color-default`}>{subtitle}</h4>
+      )
+    }
     <p class={`text-secondary mb-4 mt-2`}>
       {shortDescription}
     </p>
-    <span class={`more-btn heading-1`}> Read more &rarr;</span>
+    <a class={`more-btn text-color-secondary`} href="">
+      Read more
+      <span class="my-auto ml-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-4 h-4"
+          ><line x1="7" x2="17" y1="17" y2="7"></line><polyline
+            points="7 7 17 7 17 17"></polyline></svg
+        >
+      </span>
+    </a>
   </div>
-</a>
+</div>

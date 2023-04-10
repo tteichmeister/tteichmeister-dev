@@ -20,7 +20,7 @@ const SmallMenu: FunctionalComponent<{activeUrl: string}> = ({activeUrl}) => {
     }
     function getLinkClass(href: string) {
         const defaultClass = "uppercase text-3xl "
-        return isActive(href) ? defaultClass + "underline-text" : defaultClass;
+        return isActive(href) ? defaultClass + "underline-text text-color-primary" : defaultClass;
     }
     return (
         <>
@@ -34,7 +34,7 @@ const SmallMenu: FunctionalComponent<{activeUrl: string}> = ({activeUrl}) => {
 
             {isOpen ? 
                 <div className={`fixed h-screen w-full  z-50 left-0 background-color`}>
-                    <ul className={`flex flex-col items-center justify-center heading-3 my-auto h-3/4 space-y-24`}>
+                    <ul className={`flex flex-col items-center justify-center text-color-default my-auto h-3/4 space-y-24`}>
                         <li>
                             <a href={'/'} className={getLinkClass("/")}>{'  '} About {'  '}</a>
                         </li>

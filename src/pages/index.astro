@@ -3,6 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Avatar from "../images/avatar.jpeg";
 import { getProjects, getWorkExperiences } from "../utils/api";
 import Card from "../components/Card.astro";
+import Resume from "../components/Resume.astro";
+import Contact from "../components/Contact.astro";
+import Divider from "../components/Divider.astro";
+import Socials from "../components/Socials.astro";
+import SeeAll from "../components/SeeAll.astro";
 
 const maxCount = 2;
 const latestProjects = await getProjects(maxCount);
@@ -14,10 +19,14 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
     <div class="flex flex-col-reverse md:flex-row">
       <div class="flex flex-col justify-center items-center md:items-start">
         <div>
-          <h4 class="heading-1 text-md mb-2 typewriter">Hi, my name is</h4>
+          <h4 class="text-color-secondary text-md mb-2 typewriter">
+            Hi, my name is
+          </h4>
         </div>
-        <h1 class={`text-4xl md:text-5xl heading-2`}>Thomas</h1>
-        <h1 class={`text-4xl md:text-5xl heading-1`}>Teichmeister</h1>
+        <h1 class={`text-4xl md:text-5xl text-color-primary`}>Thomas</h1>
+        <h1 class={`text-4xl md:text-5xl text-color-secondary`}>
+          Teichmeister
+        </h1>
         <h2
           class={`text-lg text-secondary tracking-wider ml-2 text-center md:text-start`}
         >
@@ -41,15 +50,27 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
       </div>
     </div>
   </div>
-  <p class="mb-8 text-lg md:text-base">
+  <p class="mb-16 text-lg md:text-base">
     I am an enthusiastic software developer since 11+ years. I mainly work with
     the technologies C++ and C# in my work but I'm enthusiastic about different
     areas and especially the web area.
   </p>
-  <section id="latest-projects" class="my-12">
-    <h2 class="heading-1 text-3xl mb-4 mx-2 section-heading">
+
+  <div class="gap-2 mx-auto inline-flex items-center justify-center w-full">
+    <Divider />
+    <Resume />
+    <Contact />
+    <Divider />
+  </div>
+  <div class="mt-4">
+    <Socials />
+  </div>
+  <section id="latest-projects" class="my-16">
+    <h1
+      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center"
+    >
       Latest projects
-    </h2>
+    </h1>
     <ul class="w-full">
       {
         latestProjects.map((project) => (
@@ -66,19 +87,16 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
         ))
       }
     </ul>
-    <div class="mt-6 mx-6 flex items-center mb-8">
-      <a href="/projects" class="justify-center">
-        <span class="text-xl hover:text-teal-700 hover:dark:text-teal-400"
-          >All projects</span
-        >
-        <span class="text-teal-700 dark:text-teal-500">&rarr;</span>
-      </a>
+    <div class="mt-6 mx-6">
+      <SeeAll text="All projects" url="/projects" />
     </div>
   </section>
   <section id="latest-work-experiences">
-    <h2 class="heading-1 text-3xl mb-4 mx-2 section-heading">
+    <h1
+      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center"
+    >
       Latest work experiences
-    </h2>
+    </h1>
     <ul class="w-full">
       {
         latestWorkExperiences.map((work) => (
@@ -95,13 +113,8 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
         ))
       }
     </ul>
-    <div class="mt-6 mx-6 flex items-center">
-      <a href="/work" class="justify-center">
-        <span class="text-xl hover:text-teal-700 hover:dark:text-teal-400"
-          >All experiences</span
-        >
-        <span class="text-teal-700 dark:text-teal-500">&rarr;</span>
-      </a>
+    <div class="mt-6 mx-6">
+      <SeeAll text="All experiences" url="/work" />
     </div>
   </section>
 </BaseLayout>
