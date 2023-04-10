@@ -50,31 +50,31 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
       </div>
     </div>
   </div>
-  <p class="mb-16 ">
+  <p class="mb-16">
     I am an enthusiastic software developer since 11+ years. I mainly work with
     the technologies C++ and C# in my work but I'm enthusiastic about different
     areas and especially the web area.
   </p>
 
-  <div class="gap-2 mx-auto inline-flex items-center justify-center w-full">
+  <section class="gap-2 mx-auto inline-flex items-center justify-center w-full">
     <Divider />
     <Resume />
     <Contact />
     <Divider />
-  </div>
-  <div class="mt-4">
+  </section>
+  <section class="mt-4">
     <Socials />
-  </div>
-  <section id="latest-projects" class="my-16">
+  </section>
+  <section id="latest-projects" class="my-16 section fadeup">
     <h1
-      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center"
+      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center fadeup fade-delay"
     >
       Latest projects
     </h1>
     <ul class="w-full">
       {
         latestProjects.map((project) => (
-          <li>
+          <li class="fadeup fade-delay">
             <Card
               title={project.data.title}
               link={`/projects/${project.slug}`}
@@ -87,20 +87,20 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
         ))
       }
     </ul>
-    <div class="mt-6 mx-6">
+    <div class="mt-6 mx-6 fade-delay">
       <SeeAll text="All projects" url="/projects" />
     </div>
   </section>
-  <section id="latest-work-experiences">
+  <section id="latest-work-experiences" class="section fadeup">
     <h1
-      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center"
+      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center fadeup fade-delay"
     >
       Latest work experiences
     </h1>
     <ul class="w-full">
       {
         latestWorkExperiences.map((work) => (
-          <li>
+          <li class="fadeup fade-delay">
             <Card
               title={`${work.data.title}, ${work.data.company}`}
               link={`/work/${work.slug}`}
@@ -113,7 +113,7 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
         ))
       }
     </ul>
-    <div class="mt-6 mx-6">
+    <div class="mt-6 mx-6 fade-delay">
       <SeeAll text="All experiences" url="/work" />
     </div>
   </section>
@@ -148,4 +148,49 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
       @apply border-teal-800 dark:border-slate-400;
     }
   }
+  .fadeup {
+    transform: translateY(50px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+  }
+  .in-view {
+    transform: none;
+    opacity: 1;
+  }
+  .in-view.fadeup,
+  .in-view .fadeup {
+    transform: none;
+    opacity: 1;
+  }
 </style>
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: "0px 0px -50px 0px",
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const sections = Array.from(document.getElementsByClassName("section"));
+    for (let section of sections) {
+      const fadeups = section.getElementsByClassName("fade-delay");
+      for (let count = 0; count < fadeups.length; count++) {
+        fadeups[count].setAttribute(
+          "style",
+          "transition-delay: " + count * 0.5 + "s"
+        );
+      }
+      observer.observe(section);
+    }
+  });
+</script>
