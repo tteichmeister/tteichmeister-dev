@@ -17,7 +17,7 @@ const projects = (await getCollection("projects")).sort(
   <ul class="w-full">
     {
       projects.map((project) => (
-        <li class="max-w-md mx-auto">
+        <li class="mx-auto">
           <Card
             title={project.data.title}
             link={`/projects/${project.slug}`}

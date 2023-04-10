@@ -55,7 +55,7 @@ h1 {
 }
 
 .more-btn {
-	@apply ring-2 dark:ring-teal-500 ring-teal-700 hover:dark:ring-teal-300 hover:dark:text-teal-300 hover:ring-teal-700 rounded-lg py-1 px-2 justify-center text-center flex w-32;
+	@apply ring-2 dark:ring-teal-500 ring-teal-700 hover:dark:ring-teal-300 hover:dark:text-teal-300 hover:ring-teal-700 rounded-lg py-1 px-2 justify-center text-center flex w-24;
 }
 
 .hover-link {
