@@ -1,5 +1,6 @@
 ---
 import { OWNER } from "../config";
+
 import Socials from "./Socials.astro";
 const today = new Date();
 ---
@@ -22,6 +23,12 @@ const today = new Date();
     </div>
   </div>
   <Socials />
+  <div>
+    <a
+      class="text-color-default hover:dark:text-teal-500 hover:text-teal-700 text-lg mt-4"
+      href="/impressum">Impressum</a
+    >
+  </div>
 </footer>
 <style>
   footer {
