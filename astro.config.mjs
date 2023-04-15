@@ -14,7 +14,7 @@ import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://tteichmeister-dev.vercel.app/',
   integrations: [mdx(), sitemap(), tailwind(), preact()], 
   markdown: {
     remarkPlugins: [

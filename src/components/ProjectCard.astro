@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Card from "./Card.astro";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+---
+
+<Card
+  title={project.data.title}
+  link={`/projects/${project.slug}`}
+  shortDescription={project.data.description}
+  subtitle={`${project.data.fromDate} - ${project.data.toDate}${
+    project.data.location ? " | " + project.data.location : ""
+  }`}
+/>

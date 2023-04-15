@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import Card from "../components/Card.astro";
+import WorkCard from "../components/WorkCard.astro";
 
 const workExperiences = (await getCollection("work")).sort(
   (a, b) => b.data.id - a.data.id
@@ -18,14 +18,7 @@ const workExperiences = (await getCollection("work")).sort(
     {
       workExperiences.map((work) => (
         <li class="max-w-md mx-auto">
-          <Card
-            title={`${work.data.title}, ${work.data.company}`}
-            link={`/work/${work.slug}`}
-            shortDescription={work.data.shortDescription}
-            subtitle={`${work.data.fromDate} - ${
-              work.data.toDate ? work.data.toDate : "now"
-            }${work.data.location ? " | " + work.data.location : ""}`}
-          />
+          <WorkCard work={work} />
         </li>
       ))
     }

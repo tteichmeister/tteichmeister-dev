@@ -3,11 +3,13 @@ id: 1
 slug: "shctt"
 title: "SHCTT - Supporting Hybrid Collaboration for the Teams of Tomorrow"
 description: "I was a software developer on a research project with the University of Applied Sciences Upper Austria, in partnership with Microsoft Research Cambridge, investigating the automated analysis of collaboration processes."
+shortDescription: "A research project I worked on together with the University of Applied Sciences Upper Austria, in partnership with Microsoft Research Cambridge"
 fromDate: "August 2020"
 toDate: "August 2021"
 location: "Hagenberg im Mühlkreis, AUT"
-employer: "Personalized Environments and Collaborative Systems (PEEC)"
-projectLink: "https://peec.fh-hagenberg.at/projects/projectdetail/4?cHash=fdba6c8ebe4dab66737f1e65d6aee185"
+link:
+  title: "Personalized Environments and Collaborative Systems (PEEC)"
+  url: "https://peec.fh-hagenberg.at/projects/projectdetail/4?cHash=fdba6c8ebe4dab66737f1e65d6aee185"
 tags:
   [
     "C#",
@@ -21,6 +23,7 @@ tags:
     "GitHub",
     "Docker",
   ]
+lastModified: 2023-04-15
 ---
 
 ## Table of Contents
@@ -58,6 +61,7 @@ By the end of the year we successfully completed the prototype. To test its func
 > T. Neumayr, M. Augstein, J. Schönböck, S. Rintel, H. Leeb and T. Teichmeister, "Semi-Automated Analysis of Collaborative Interaction-Are We There Yet?", Proceedings of the ACM on Human-Computer Interaction (PACM HCI), vol. 6, no. ISS, pp. 354-380, 2022, doi: https://doi.org/10.1145/3567724.
 
 ## Additional Links
+
 - [PEEC - SHCTT - Supporting Hybrid Collaboration for the Teams of Tomorrow](https://peec.fh-hagenberg.at/projects/projectdetail/4?cHash=fdba6c8ebe4dab66737f1e65d6aee185)
 - [Microsoft Platform for Situated Intelligence (PSI)](https://github.com/microsoft/psi)
 

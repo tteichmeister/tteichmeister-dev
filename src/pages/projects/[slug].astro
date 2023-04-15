@@ -6,7 +6,7 @@ import Location from "../../components/Location.astro";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
-import HistoryBack from "../../components/HistoryBack.astro";
+import BackToLink from "../../components/BackToLink.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -22,32 +22,49 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const project = entry.data;
 ---
 
-<BaseLayout>
-  <HistoryBack />
+<BaseLayout
+  title={project.title}
+  description={project.shortDescription || project.description}
+>
+  <div class="mt-6 mb-8">
+    <BackToLink path="/projects" text="All projects" />
+  </div>
   <h1 class={`text-5xl text-secondary mb-6 leading-tight`}>
-    {entry.data.title}
+    {project.title}
   </h1>
-  <div class="grid md:grid-cols-2 grid-cols-1 gap-0 md:gap-4">
-    <DateRange from={entry.data.fromDate} to={entry.data.toDate} />
-    {entry.data.location && <Location location={entry.data.location} />}
-  </div>
-  <div>
-    {
-      entry.data.employer && (
-        <ProjectLink link={entry.data.projectLink} name={entry.data.employer} />
-      )
-    }
-  </div>
-  <article
-    class={`text-color-default prose-lg md:prose-xl prose-a:text-teal-700 dark:prose-a:text-teal-500 prose-headings:text-slate-800 dark:prose-headings:text-slate-300`}
-  >
+  {
+    project.location ? (
+      <>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-0 md:gap-4">
+          <DateRange from={project.fromDate} to={project.toDate} />
+          <Location location={project.location} />
+        </div>
+        <div>
+          <ProjectLink link={project.link.url} name={project.link.title} />
+        </div>
+      </>
+    ) : (
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-0 md:gap-4">
+        <DateRange from={project.fromDate} to={project.toDate} />
+        <ProjectLink link={project.link.url} name={project.link.title} />
+      </div>
+    )
+  }
+  <article class="content">
     <div class="">
       <Content />
     </div>
     <div class="my-12 flex flex-wrap">
-      {entry.data.tags.map((tag: string) => <Tag tag={tag} />)}
+      {project.tags.map((tag: string) => <Tag tag={tag} />)}
     </div>
   </article>
+  <div class="mt-8 flex justify-center">
+    <p class="italic">
+      Last updated: {project.lastModified.toDateString()}
+    </p>
+  </div>
 </BaseLayout>

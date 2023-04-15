@@ -4,3 +4,7 @@
 export const OWNER = 'Thomas Teichmeister'
 export const SITE_TITLE = 'Thomas Teichmeister';
 export const SITE_DESCRIPTION = "Developer from Austria";
+export const REPOSITORY_URL = "https://github.com/tteichmeister/tteichmeister-dev";
+export const LINKEDIN_PROFILE = "https://www.linkedin.com/in/tteichmeister";
+export const TWITTER_PROFILE = "https://twitter.com/thomasteichmei1";
+export const PLACEHOLDER_IMG = "/placeholder-social.jpg";

@@ -21,7 +21,7 @@ h1 {
 	font-family:"Poppins", sans-serif; font-weight: 700;
 }
 
-.font-poppins {
+.font-1 {
 	font-family: "Poppins", sans-serif;
 }
 /* 000212 */
@@ -51,7 +51,7 @@ h1 {
 
 
 .card-bg {
-	@apply dark:bg-[#000000] ring-[0.5px] ring-slate-500 dark:ring-slate-400 shadow-md;
+	@apply dark:bg-[#000000] ring-[1px] ring-slate-500 dark:ring-slate-400 shadow-md;
 }
 
 .more-btn {
@@ -65,4 +65,8 @@ h1 {
 
 .theme-toggle {
 	@apply group-hover:text-teal-700 group-hover:dark:text-teal-500 w-5 h-5 text-gray-700 dark:text-gray-200 stroke-current fill-none;
+}
+
+.content {
+	@apply text-color-default prose-lg md:prose-xl prose-a:text-teal-700 dark:prose-a:text-teal-500 prose-headings:text-slate-800 dark:prose-headings:text-slate-300;
 }

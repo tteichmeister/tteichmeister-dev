@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Card from "./Card.astro";
+
+interface Props {
+  work: CollectionEntry<"work">;
+}
+
+const { work } = Astro.props;
+---
+
+<Card
+  title={`${work.data.title}, ${work.data.link.title}`}
+  link={`/work/${work.slug}`}
+  shortDescription={work.data.description}
+  subtitle={`${work.data.fromDate} - ${
+    work.data.toDate ? work.data.toDate : "now"
+  }${work.data.location ? " | " + work.data.location : ""}`}
+/>

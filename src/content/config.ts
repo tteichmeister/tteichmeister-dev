@@ -1,18 +1,22 @@
 
 import { z, defineCollection } from 'astro:content';
 
-const projectsCollection = defineCollection({ 
+const projectCollection = defineCollection({ 
     schema: z.object({
         id: z.number(),
         title: z.string(),
         description: z.string(),
+        shortDescription: z.string().max(155).optional(),
         location: z.string().optional(),
         fromDate: z.string(), 
         toDate: z.string().optional(),
-        employer: z.string().optional(),
-        projectLink: z.string().url(),
+        link: z.object({
+          title: z.string(),
+          url: z.string().url()
+        }),
         tags: z.array(z.string()),
-        draft: z.boolean().default(false)
+        draft: z.boolean().default(false),
+        lastModified: z.date()
     }),
 });
 
@@ -20,18 +24,22 @@ const workCollection = defineCollection({
   schema: z.object({
       id: z.number(),
       title: z.string(),
-      company: z.string(),
-      shortDescription: z.string(),
-      location: z.string().optional(),
+      description: z.string(),
+      shortDescription: z.string().max(155).optional(),
+      location: z.string(),
       fromDate: z.string(), 
       toDate: z.string().optional(),
-      companyLink: z.string().url(),
+      link: z.object({
+        title: z.string(),
+        url: z.string().url()
+      }),
       tags: z.array(z.string()),
-      draft: z.boolean().default(false)
+      draft: z.boolean().default(false),
+      lastModified: z.date()
   }),
 });
 
 export const collections = {
-  'projects': projectsCollection,
+  'projects': projectCollection,
   'work': workCollection,
 };

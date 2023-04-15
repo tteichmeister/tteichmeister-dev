@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import Card from "../components/Card.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.id - a.data.id
@@ -18,14 +18,7 @@ const projects = (await getCollection("projects")).sort(
     {
       projects.map((project) => (
         <li class="mx-auto">
-          <Card
-            title={project.data.title}
-            link={`/projects/${project.slug}`}
-            shortDescription={project.data.description}
-            subtitle={`${project.data.fromDate} - ${project.data.toDate}${
-              project.data.location ? " | " + project.data.location : ""
-            }`}
-          />
+          <ProjectCard project={project} />
         </li>
       ))
     }
