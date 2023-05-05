@@ -11,19 +11,26 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  robots?: boolean;
 }
 
 const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   image = PLACEHOLDER_IMG,
+  robots = true,
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <MetaHead title={title} description={description} image={image} />
+    <MetaHead
+      title={title}
+      description={description}
+      image={image}
+      robots={robots}
+    />
   </head>
   <body class={`h-screen background-color text-color-default`}>
     <NavBar title={SITE_TITLE} />
