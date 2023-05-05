@@ -1,11 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 import WorkCard from "../components/WorkCard.astro";
+import { getWorkExperiences } from "../utils/api";
 
-const workExperiences = (await getCollection("work")).sort(
-  (a, b) => b.data.id - a.data.id
-);
+const workExperiences = await getWorkExperiences();
 ---
 
 <BaseLayout>

@@ -1,11 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
+import { getProjects } from "../utils/api";
 
-const projects = (await getCollection("projects")).sort(
-  (a, b) => b.data.id - a.data.id
-);
+const projects = await getProjects();
 ---
 
 <BaseLayout>
