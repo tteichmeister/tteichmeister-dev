@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Avatar from "../images/avatar.jpeg";
+import Avatar from "../images/avatar.png";
 import { getProjects, getWorkExperiences } from "../utils/api";
 import Resume from "../components/Resume.astro";
 import Contact from "../components/Contact.astro";
@@ -33,7 +33,7 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
         >
           I'm a <a
             href="https://github.com/tteichmeister"
-            class="underline-text hover:text-teal-700 dark:hover:text-teal-500"
+            class="underline-text hover:text-teal-700 dark:hover:text-teal-500 -z-1"
             >Software Developer</a
           > from Salzburg 🇦🇹
         </h2>
@@ -45,16 +45,27 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
           src={Avatar}
           alt="Thomas Teichmeister"
           class="rounded-full"
-          width="120"
-          height="120"
+          width="500"
         />
       </div>
     </div>
   </div>
   <p class="mb-16">
-    I am an enthusiastic software developer since 11+ years. I mainly work with
-    the technologies C++ and C# in my work but I'm enthusiastic about different
-    areas and especially the web area.
+    Hi there! I am a software developer with 11+ years of experience, and I
+    absolutely love programming. As someone who is always interested in learning
+    new things, I have a particular interest in web technologies. <br /><br />
+
+    Currently, I work at <a
+      class="text-color-secondary"
+      href="https://www.allplan.com/at/loesungen/herstellung-von-fertigteilen"
+      >Allplan Software Engineering GmbH</a
+    > as a <a
+      class="text-color-secondary"
+      href="/work/senior-software-developer-allplan"
+      >Senior Software Developer</a
+    >, where I mainly use C++ and C# in my day-to-day work. For more information
+    about my work experience and projects, please see the details below, where I
+    provide specific information about my accomplishments.
   </p>
 
   <section class="gap-2 mx-auto inline-flex items-center justify-center w-full">
