@@ -28,24 +28,26 @@ const work = entry.data;
   title={work.title}
   description={work.shortDescription || work.description}
 >
-  <BackToLink path="/work" text="All experiences" />
-  <h1 class={`text-3xl text-secondary mb-6`}>
-    {work.title}
-  </h1>
-
-  <div class="grid md:grid-cols-2 grid-cols-1 gap-0 md:gap-4">
-    <DateRange from={work.fromDate} to={work.toDate} />
-    {work.location && <Location location={work.location} />}
-  </div>
   <div>
-    <ProjectLink link={work.link.url} name={work.link.title} />
+    <BackToLink path="/work" text="All experiences" />
+    <h1 class={`text-3xl text-secondary mb-6`}>
+      {work.title}
+    </h1>
+
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-0 md:gap-4">
+      <DateRange from={work.fromDate} to={work.toDate} />
+      {work.location && <Location location={work.location} />}
+    </div>
+    <div>
+      <ProjectLink link={work.link.url} name={work.link.title} />
+    </div>
+    <article class="content">
+      <div class="">
+        <Content />
+      </div>
+      <div class="my-12 flex flex-wrap">
+        {work.tags.map((tag: string) => <Tag tag={tag} />)}
+      </div>
+    </article>
   </div>
-  <article class="content">
-    <div class="">
-      <Content />
-    </div>
-    <div class="my-12 flex flex-wrap">
-      {work.tags.map((tag: string) => <Tag tag={tag} />)}
-    </div>
-  </article>
 </BaseLayout>

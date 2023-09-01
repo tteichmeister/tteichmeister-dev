@@ -25,7 +25,7 @@ import SmallMenu from "./SmallMenu";
             <HeaderLink href={"/education"}>Education</HeaderLink>
           </li> -->
           <li class="mb-1">
-            <ThemeToggle client:load />
+            <ThemeToggle client:only />
           </li>
           <li class="mx-1 mb-1 md:hidden justify-self-end">
             <SmallMenu activeUrl={Astro.url.pathname} client:load />

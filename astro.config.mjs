@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
@@ -12,24 +11,24 @@ import preact from "@astrojs/preact";
 
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import vercel from "@astrojs/vercel/static";
 
+// https://astro.build/config
 export default defineConfig({
   site: 'https://tteichmeister.dev/',
-  integrations: [mdx(), sitemap(), tailwind(), preact()], 
+  integrations: [mdx(), sitemap(), tailwind(), preact()],
   markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [
-        remarkCollapse,
-        {
-          test: "Table of contents",
-        },
-      ],
-    ],
+    remarkPlugins: [remarkToc, [remarkCollapse, {
+      test: "Table of contents"
+    }]],
     shikiConfig: {
       theme: "github-dark",
-      wrap: true,
+      wrap: true
     },
-    extendDefaultPlugins: true,
+    extendDefaultPlugins: true
   },
+  output: "static",
+  adapter: vercel({
+    analytics: true,
+  })
 });
