@@ -5,10 +5,22 @@ import type { FunctionalComponent } from "preact";
 
 
 const ThemeToggle: FunctionalComponent = () => {
-    const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
+    const initializeTheme = () => {
+        let theme;
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          theme = localStorage.getItem("theme") ?? "dark";
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = "dark";
+        } else {
+          theme = "light";
+        }
+        return theme;
+      };
+    const [theme, setTheme] = useState(initializeTheme());
     const toggleTheme = () => {
         setTheme(theme === "light" ? "dark" : "light");
     };
+
     useEffect(() => {
         if (theme === "dark") {
           document.documentElement.classList.add("dark");
