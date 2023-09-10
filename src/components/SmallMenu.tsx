@@ -9,9 +9,9 @@ const SmallMenu: FunctionalComponent<{activeUrl: string}> = ({activeUrl}) => {
     const [isOpen, setOpen] = useState(false); 
     function toggleMenu() {
         if (isOpen) {
-
+            document.body.classList.remove('overflow-hidden');
         } else {
-
+            document.body.classList.add('overflow-hidden');
         }
         setOpen(!isOpen)
     }
@@ -32,28 +32,22 @@ const SmallMenu: FunctionalComponent<{activeUrl: string}> = ({activeUrl}) => {
                 </div>
             </button>
 
-            {isOpen ? 
-                <div className={`fixed h-screen w-full  z-50 left-0 background-color`}>
-                    <ul className={`flex flex-col items-center justify-center text-color-default my-auto h-3/4 space-y-24`}>
-                        <li>
-                            <a href={'/'} className={getLinkClass("/")}>{'  '} About {'  '}</a>
-                        </li>
-                        <li>
-                            <a href={'/work'} className={getLinkClass("/work")}>Work</a>
-                        </li>
-                        <li>
-                            <a href={'/projects'} className={getLinkClass("/projects")}>Projects</a>
-                        </li>
-                        {/* <li>
-                            <a href={'/education'} className={getLinkClass("/education")}>Education</a>
-                        </li> */}
-                    </ul>
-                </div> 
-            : null}
 
+            <div className={`fixed h-screen w-full z-50 left-0 background-color right-full transform ${isOpen ? '': 'translate-x-full'} transition-transform duration-500 ease-in-out`}>
+                <ul className={`flex flex-col items-center justify-center text-color-default my-auto h-3/4 space-y-24`}>
+                    <li>
+                        <a href={'/'} className={getLinkClass("/")}>{'  '} About {'  '}</a>
+                    </li>
+                    <li>
+                        <a href={'/work'} className={getLinkClass("/work")}>Work</a>
+                    </li>
+                    <li>
+                        <a href={'/projects'} className={getLinkClass("/projects")}>Projects</a>
+                    </li>
+                </ul>
+            </div> 
         </>
     )
 }
-// translate-x-0 transition duration-700
 
 export default SmallMenu;
