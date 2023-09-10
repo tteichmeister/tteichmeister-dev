@@ -7,6 +7,7 @@ import Location from "../../components/Location.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 import BackToLink from "../../components/BackToLink.astro";
+import TagsList from "../../components/TagsList.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -56,12 +57,10 @@ const project = entry.data;
       )
     }
     <article class="content">
-      <div class="">
+      <div>
         <Content />
       </div>
-      <div class="my-12 flex flex-wrap">
-        {project.tags.map((tag: string) => <Tag tag={tag} />)}
-      </div>
+      <TagsList tags={project.tags} />
     </article>
     <div class="mt-8 flex justify-center">
       <p class="italic">

@@ -2,16 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WorkCard from "../components/WorkCard.astro";
 import { getWorkExperiences } from "../utils/api";
+import PageTitle from "../components/Title.astro";
 
 const workExperiences = await getWorkExperiences();
 ---
 
 <BaseLayout>
-  <h1
-    class="mb-12 mx-auto text-5xl font-extrabold max-w-md text-secondary text-center"
-  >
-    Work Experiences
-  </h1>
+  <PageTitle text="Work Experiences" />
   <ul class="w-full">
     {
       workExperiences.map((work) => (

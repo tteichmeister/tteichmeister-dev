@@ -8,3 +8,4 @@ export const REPOSITORY_URL = "https://github.com/tteichmeister/tteichmeister-de
 export const LINKEDIN_PROFILE = "https://www.linkedin.com/in/tteichmeister";
 export const TWITTER_PROFILE = "https://twitter.com/thomasteichmei1";
 export const PLACEHOLDER_IMG = "/placeholder-social.jpg";
+export const MAX_COUNT_ITEMS = 2;

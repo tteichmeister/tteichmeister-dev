@@ -1,0 +1,24 @@
+---
+interface Props {
+  text: string;
+  size?: "md" | "lg";
+}
+
+const { text, size = "md" } = Astro.props;
+
+let twSize;
+switch (size) {
+  case "md":
+    twSize = "text-4xl";
+    break;
+  case "lg":
+    twSize = "text-5xl";
+    break;
+}
+---
+
+<h1
+  class=`mb-12 mx-auto ${twSize} font-extrabold max-w-md text-secondary text-center`
+>
+  {text}
+</h1>

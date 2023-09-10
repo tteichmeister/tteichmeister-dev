@@ -2,16 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { getProjects } from "../utils/api";
+import PageTitle from "../components/Title.astro";
 
 const projects = await getProjects();
 ---
 
 <BaseLayout>
-  <h1
-    class="mb-12 mx-auto text-5xl font-extrabold max-w-md text-secondary text-center"
-  >
-    Projects
-  </h1>
+  <PageTitle text="Projects" />
   <ul class="w-full">
     {
       projects.map((project) => (
