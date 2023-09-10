@@ -10,11 +10,11 @@ import Socials from "../components/Socials.astro";
 import SeeAll from "../components/SeeAll.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import WorkCard from "../components/WorkCard.astro";
+import PageTitle from "../components/Title.astro";
+import { MAX_COUNT_ITEMS } from "../config";
 
-const maxCount = 2;
-const latestProjects = await getProjects(maxCount);
-console.log(latestProjects.length);
-const latestWorkExperiences = await getWorkExperiences(maxCount);
+const latestProjects = await getProjects(MAX_COUNT_ITEMS);
+const latestWorkExperiences = await getWorkExperiences(MAX_COUNT_ITEMS);
 ---
 
 <BaseLayout>
@@ -37,7 +37,7 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
             href="https://github.com/tteichmeister"
             class="underline-text hover:text-teal-700 dark:hover:text-teal-500 -z-1"
             >Software Developer</a
-          > from Salzburg 🇦🇹
+          > from Salzburg
         </h2>
       </div>
       <div
@@ -57,7 +57,7 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
     absolutely love programming. As someone who is always interested in learning
     new things, I have a particular interest in web technologies. <br /><br />
 
-    Currently, I work at <a
+     Currently, I work at <a
       class="text-color-secondary"
       href="https://www.allplan.com/at/loesungen/herstellung-von-fertigteilen"
       >Allplan Software Engineering GmbH</a
@@ -80,11 +80,9 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
     <Socials />
   </section>
   <section id="latest-projects" class="my-16 section fadeup">
-    <h1
-      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center fadeup fade-delay"
-    >
-      Latest projects
-    </h1>
+    <div class="fadeup fade-delay">
+      <PageTitle text="Latest projects" size="md" />
+    </div>
     <ul class="w-full">
       {
         latestProjects.map((project) => (
@@ -99,11 +97,9 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
     </div>
   </section>
   <section id="latest-work-experiences" class="section fadeup">
-    <h1
-      class="text-4xl font-extrabold mb-12 mx-2 text-slate-800 dark:text-slate-200 text-center fadeup fade-delay"
-    >
-      Latest work experiences
-    </h1>
+    <div class="fadeup fade-delay">
+      <PageTitle text="Latest work experiences" size="md" />
+    </div>
     <ul class="w-full">
       {
         latestWorkExperiences.map((work) => (
@@ -124,7 +120,9 @@ const latestWorkExperiences = await getWorkExperiences(maxCount);
     display: inline-block;
     overflow: hidden;
     letter-spacing: 2px;
-    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    animation:
+      typing 3s steps(30, end),
+      blink 0.75s step-end infinite;
     white-space: nowrap;
     @apply border-r-2 border-solid border-teal-800 dark:border-slate-400;
     box-sizing: border-box;

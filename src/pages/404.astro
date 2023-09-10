@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Title from "../components/Title.astro";
+---
+
+<BaseLayout robots={false}>
+  <div class="text-center mx-auto">
+    <Title text="Oops! Looks like you're lost ..." size="md" />
+    <h2 class="text-xl">
+      Maybe try to click<a href="/" class="mx-1 text-color-secondary">here</a
+      >;-)
+    </h2>
+  </div>
+</BaseLayout>
