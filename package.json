@@ -17,7 +17,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@astrojs/vercel": "^4.0.2",
-    "@babel/core": "^7.22.11",
+    "@babel/core": "^7.23.2",
     "@fontsource/poppins": "^4.5.10",
     "@fontsource/raleway": "^4.5.12",
     "astro": "^3.0.5",
