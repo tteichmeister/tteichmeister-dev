@@ -1,11 +1,11 @@
 ---
 id: 2
+type: "project"
 slug: "carreer-advisory-system"
 title: "Career Advisory System"
 description: "The second research project I worked on together with the University of Applied Sciences Upper Austria as a software developer. It was about the investigation of alternative approaches to improve the job recommendation system of karriere.at."
-shortDescription: "A research project I worked on together with the University of Applied Sciences Upper Austria to improve the recommendation system of karriere.at"
-fromDate: "September 2021"
-toDate: "Juli 2022"
+start: "September 2021"
+end: "Juli 2022"
 location: "Hagenberg im Mühlkreis, AUT"
 link:
   title: "Personalized Environments and Collaborative Systems (PEEC)"

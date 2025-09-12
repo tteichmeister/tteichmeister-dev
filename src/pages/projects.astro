@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import AchievmentItem from "../components/AchievmentItem.astro";
 import { getProjects } from "../utils/api";
-import PageTitle from "../components/Title.astro";
+import PageTitle from "../components/PageTitle.astro";
 
 const projects = await getProjects();
 ---
@@ -13,7 +13,7 @@ const projects = await getProjects();
     {
       projects.map((project) => (
         <li class="mx-auto">
-          <ProjectCard project={project} />
+          <AchievmentItem entry={project} />
         </li>
       ))
     }

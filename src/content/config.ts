@@ -1,14 +1,15 @@
 
 import { z, defineCollection } from 'astro:content';
 
-const projectCollection = defineCollection({ 
+const achievementCollection = defineCollection({ 
     schema: z.object({
         id: z.number(),
+        type: z.enum(["work", "project"]),
         title: z.string(),
         description: z.string(),
         location: z.string().optional(),
-        fromDate: z.string(), 
-        toDate: z.string().optional(),
+        start: z.string(), 
+        end: z.string().optional(),
         link: z.object({
           title: z.string(),
           url: z.string().url()
@@ -19,25 +20,7 @@ const projectCollection = defineCollection({
     }),
 });
 
-const workCollection = defineCollection({ 
-  schema: z.object({
-      id: z.number(),
-      title: z.string(),
-      description: z.string(),
-      location: z.string(),
-      fromDate: z.string(), 
-      toDate: z.string().optional(),
-      link: z.object({
-        title: z.string(),
-        url: z.string().url()
-      }),
-      tags: z.array(z.string()),
-      draft: z.boolean().default(false),
-      lastModified: z.date()
-  }),
-});
-
 export const collections = {
-  'projects': projectCollection,
-  'work': workCollection,
+  'projects': achievementCollection,
+  'work': achievementCollection,
 };

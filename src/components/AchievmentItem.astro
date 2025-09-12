@@ -1,0 +1,26 @@
+---
+import Card from "./Card.astro";
+
+const { entry } = Astro.props;
+
+// check wether type is project or work and build link either /projects/slug or /work/slug
+
+const getBaseLink = (type: string) => {
+  if (type === "project") {
+    return "projects";
+  } else if (type === "work") {
+    return "work";
+  } else {
+    throw new Error(`Unknown type: ${type}`);
+  }
+};
+---
+
+<Card
+  title={entry.data.title}
+  link={`/${getBaseLink(entry.data.type)}/${entry.slug}`}
+  shortDescription={entry.data.description}
+  subtitle={`${entry.data.start} - ${
+    entry.data.end ?? "now"
+  }${entry.data.location ? " | " + entry.data.location : ""}`}
+/>

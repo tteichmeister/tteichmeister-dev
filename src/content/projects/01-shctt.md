@@ -1,10 +1,11 @@
 ---
 id: 1
+type: "project"
 slug: "shctt"
 title: "SHCTT - Supporting Hybrid Collaboration for the Teams of Tomorrow"
 description: "As a software developer, I worked on a research project with the University of Applied Sciences Upper Austria and Microsoft Research Cambridge, investigating the automated analysis of collaboration processes."
-fromDate: "August 2020"
-toDate: "August 2021"
+start: "August 2020"
+end: "August 2021"
 location: "Hagenberg im Mühlkreis, AUT"
 link:
   title: "Personalized Environments and Collaborative Systems (PEEC)"

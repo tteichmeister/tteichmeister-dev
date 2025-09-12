@@ -1,10 +1,11 @@
 ---
 id: 3
+type: "project"
 slug: "portfolio-website"
 title: "Portfolio website"
 description: "An overview about how I built my portfolio website and which stack I chose for the implementation."
-fromDate: "January 2023"
-toDate: "April 2023"
+start: "January 2023"
+end: "April 2023"
 link:
   title: GitHub
   url: "https://github.com/tteichmeister/tteichmeister-dev"

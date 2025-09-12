@@ -7,10 +7,9 @@ import Resume from "../components/Resume.astro";
 import Contact from "../components/Contact.astro";
 import Divider from "../components/Divider.astro";
 import Socials from "../components/Socials.astro";
-import SeeAll from "../components/SeeAll.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import WorkCard from "../components/WorkCard.astro";
-import PageTitle from "../components/Title.astro";
+import SeeAllLink from "../components/SeeAllLink.astro";
+import AchievmentItem from "../components/AchievmentItem.astro";
+import PageTitle from "../components/PageTitle.astro";
 import { MAX_COUNT_ITEMS } from "../config";
 
 const latestProjects = await getProjects(MAX_COUNT_ITEMS);
@@ -95,7 +94,7 @@ function yearsWorked(startYear = 2011) {
       {
         latestProjects.map((project) => (
           <li class="fadeup fade-delay">
-            <ProjectCard project={project} />
+            <AchievmentItem entry={project} />
           </li>
         ))
       }
@@ -103,7 +102,7 @@ function yearsWorked(startYear = 2011) {
     {
       latestProjects.length > MAX_COUNT_ITEMS && (
         <div class="mt-6 mx-6 fadeup fade-delay">
-          <SeeAll text="All projects" url="/projects" />
+          <SeeAllLink text="All projects" url="/projects" />
         </div>
       )
     }
@@ -116,7 +115,7 @@ function yearsWorked(startYear = 2011) {
       {
         latestWorkExperiences.map((work) => (
           <li class="fadeup fade-delay">
-            <WorkCard work={work} />
+            <AchievmentItem entry={work} />
           </li>
         ))
       }
@@ -124,7 +123,7 @@ function yearsWorked(startYear = 2011) {
     {
       latestWorkExperiences.length > MAX_COUNT_ITEMS && (
         <div class="mt-6 mx-6 fadeup fade-delay">
-          <SeeAll text="All experiences" url="/work" />
+          <SeeAllLink text="All experiences" url="/work" />
         </div>
       )
     }
