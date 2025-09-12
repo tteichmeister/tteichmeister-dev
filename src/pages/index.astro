@@ -100,9 +100,13 @@ function yearsWorked(startYear = 2011) {
         ))
       }
     </ul>
-    <div class="mt-6 mx-6 fadeup fade-delay">
-      <SeeAll text="See all projects" url="/projects" />
-    </div>
+    {
+      latestProjects.length > MAX_COUNT_ITEMS && (
+        <div class="mt-6 mx-6 fadeup fade-delay">
+          <SeeAll text="All projects" url="/projects" />
+        </div>
+      )
+    }
   </section>
   <section id="latest-work-experiences" class="section fadeup">
     <div class="fadeup fade-delay">
@@ -117,9 +121,13 @@ function yearsWorked(startYear = 2011) {
         ))
       }
     </ul>
-    <div class="mt-6 mx-6 fadeup fade-delay">
-      <SeeAll text="See all experiences" url="/work" />
-    </div>
+    {
+      latestWorkExperiences.length > MAX_COUNT_ITEMS && (
+        <div class="mt-6 mx-6 fadeup fade-delay">
+          <SeeAll text="All experiences" url="/work" />
+        </div>
+      )
+    }
   </section>
 </BaseLayout>
 

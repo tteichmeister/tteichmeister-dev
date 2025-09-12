@@ -2,8 +2,7 @@
 id: 1
 slug: "shctt"
 title: "SHCTT - Supporting Hybrid Collaboration for the Teams of Tomorrow"
-description: "I was a software developer on a research project with the University of Applied Sciences Upper Austria, in partnership with Microsoft Research Cambridge, investigating the automated analysis of collaboration processes."
-shortDescription: "A research project I worked on together with the University of Applied Sciences Upper Austria, in partnership with Microsoft Research Cambridge"
+description: "As a software developer, I worked on a research project with the University of Applied Sciences Upper Austria and Microsoft Research Cambridge, investigating the automated analysis of collaboration processes."
 fromDate: "August 2020"
 toDate: "August 2021"
 location: "Hagenberg im Mühlkreis, AUT"
@@ -19,42 +18,33 @@ tags:
     "Google Cloud",
     "Microsoft Project Tokyo",
     "Microsoft PSI",
+    "SpaCy",
     "MongoDB",
     "GitHub",
     "Docker",
   ]
-lastModified: 2023-04-15
+lastModified: 2025-09-12
 ---
 
 ## Table of Contents
 
-## TL; DR
+## Summary
 
-Between August 2020 and August 2021, I engaged in a research project alongside my employment at [Allplan Software Engineering GmbH](https://www.allplan.com/at/loesungen/herstellung-von-fertigteilen). The project, which required a commitment of 20 hours per week, was conducted in partnership with the [PEEC research group](https://peec.fh-hagenberg.at/) at the University of Applied Sciences Upper Austria. The focus of the project was to investigate the automated analysis of collaboration processes, and I was responsible for the implementation of the prototype.
+Between August 2020 and August 2021, I contributed 20 hours per week to a research project alongside my role at [Allplan Österreich GmbH](https://www.allplan.com/at/loesungen/herstellung-von-fertigteilen), in partnership with the [PEEC research group](https://peec.fh-hagenberg.at/) at the [University of Applied Sciences Upper Austria](https://fh-ooe.at/campus-hagenberg) and in collaboration with [Microsoft Research Cambridge](https://www.microsoft.com/en-us/research/lab/microsoft-research-cambridge/). My main responsibility was the implementation of a prototype for the semi-automated analysis of collaborative interactions using C# and Python, supported by various AI services. The project culminated in a [research paper](https://www.microsoft.com/en-us/research/publication/semi-automated-analysis-of-collaborative-interaction-are-we-there-yet/) published in 2022.
 
-During the project, we utilized various AI services and frameworks, with the implementation of the prototype being mainly done through programming languages C# and Python. The project's successful outcome was a [research paper](https://www.microsoft.com/en-us/research/publication/semi-automated-analysis-of-collaborative-interaction-are-we-there-yet/) that was published in 2022. It is noteworthy that the research was carried out in collaboration with [Microsoft Research Cambridge](https://www.microsoft.com/en-us/research/lab/microsoft-research-cambridge/).
+## How I joined the project
 
-## How I came to the project?
+During my master’s thesis at the University of Applied Sciences Upper Austria, I came across a posting for software developers in this initiative. Since remote and hybrid collaboration had become indispensable during the COVID-19 pandemic, the project addressed a highly relevant topic at the time. I therefore negotiated reduced hours at Allplan to participate, and after completing my degree in July, I joined the project in August.
 
-During my Master's thesis at the University of Applied Sciences Upper Austria, I came across the job advertisement seeking software developers for this research project. The position was particularly timely, given the changes in collaboration due to home office and hybrid work models.
+## Challenges
 
-Despite being employed at Allplan Software Engineering GmbH, I negotiated a reduction in my working hours to take on the research project. Following the completion of my Master's degree in July, I began working on the project in August.
+Automatically analyzing collaboration in images and video proved to be deceptively complex. Even human annotators struggled to distinguish fine-grained interaction types, making manual analysis highly time-consuming. Hybrid and remote work further blurred the boundaries between collaboration modes, complicating reliable automated recognition.
 
-## The challenges
+## Project work
 
-The automated analysis of collaboration processes may seem simple at first glance, but it is a very complex task.
+We collaborated closely with researchers at Microsoft Research Cambridge, iterating on ideas, methods, and evaluation strategies. My primary responsibility was end-to-end system development: designing, implementing, and integrating components while assessing the feasibility of automatic detection of distinct collaboration processes. To this end, we evaluated a range of AI services and frameworks, including [Microsoft Cognitive Services (now Azure AI Services)](https://azure.microsoft.com/en-us/products/ai-services) and [Google Cloud](https://cloud.google.com/ai?hl=en), as well as experimental technologies such as [Microsoft Platform for Situated Intelligence (PSI)](https://github.com/microsoft/psi) and [Microsoft Project Tokyo](https://www.microsoft.com/en-us/research/project/project-tokyo/), to benchmark performance against our objectives.
 
-The aim is to recognize and analyze the different types of collaboration processes in image and video material. However, this also turns out to be a challenge for humans, which is why the analysis so far has been a time-consuming task. However, this is also a challenge for automated systems as the different processes are sometimes difficult to distinguish from each other. This task is further complicated by the way collaboration has changed, especially in recent years through hybrid or remote collaboration.
-
-## The project
-
-Throughout the course of our project, our team worked in close collaboration with researchers at Microsoft Research Cambridge. We engaged in a dynamic and ongoing exchange of ideas and strategies aimed at finding innovative solutions to our project's objectives.
-
-My main role in this project was that of a software developer, responsible for the creation and implementation of the system. The implementation of the system was undoubtedly a crucial aspect of the project, but equally important was the investigation into the potential for automatic recognition of various collaboration processes.
-
-As part of our work, we had the opportunity to experiment with diverse technologies and cutting-edge AI services, allowing us to compare and contrast their effectiveness in relation to our project's goals. Additionally, we were able to use partially experimental frameworks developed by Microsoft in our prototype.
-
-By the end of the year we successfully completed the prototype. To test its functionality, we conducted a comprehensive user study in which the prototype was thoroughly assessed. Ultimately, our work resulted in a research paper, published in December of 2022, which captured our project's contributions and achievements.
+By the end of the year, we delivered a working prototype and conducted a comprehensive user study to validate its functionality and usefulness. Our findings informed the final design and were published in December 2022, documenting the prototype, methodology, and key lessons learned.
 
 ## Paper
 
@@ -66,3 +56,9 @@ By the end of the year we successfully completed the prototype. To test its func
 - [Microsoft Platform for Situated Intelligence (PSI)](https://github.com/microsoft/psi)
 
 - [Microsoft Project Tokyo](https://www.microsoft.com/en-us/research/project/project-tokyo/)
+
+- [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services)
+
+- [Google Cloud](https://cloud.google.com/ai?hl=en)
+
+- [spaCy](https://spacy.io/)
