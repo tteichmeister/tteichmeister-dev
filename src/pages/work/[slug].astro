@@ -44,5 +44,10 @@ const work = entry.data;
       </div>
       <TagsList tags={work.tags} />
     </article>
+    <div class="mt-8 flex justify-center">
+      <p class="italic">
+        Last updated: {work.lastModified.toDateString()}
+      </p>
+    </div>
   </div>
 </BaseLayout>
