@@ -1,0 +1,137 @@
+---
+import TimeLine from "../components/TimeLine.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageTitle from "../components/PageTitle.astro";
+---
+
+<BaseLayout>
+  <PageTitle text="Resume" />
+  <section id="cv-work-experience" class="section max-w-2xl mx-auto">
+    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left">
+      Work experience
+    </h1>
+    <div
+      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
+    >
+      <div>
+        <TimeLine
+          title="SENIOR SOFTWARE DEVELOPER, ALLPLAN ÖSTERREICH GMBH"
+          subtitle="since January 2021 | Puch bei Hallein, Salzburg"
+          details={[
+            "Mentoring and professional support of new developers, including onboarding and knowledge transfer",
+            "Conducting regular training sessions for selected development teams with a focus on software architecture and Clean Code",
+            "Project leadership to optimize critical software components in terms of maintainability and readability through the use of Test-Driven Development (TDD)",
+            "Leading and implementing the partially automated migration of MFC and WinForms components to WPF",
+            "Supporting the optimization of performance and software architecture in critical system areas to ensure long-term maintainability",
+          ]}
+        />
+      </div>
+      <div class="mt-12">
+        <TimeLine
+          title="SOFTWARE DEVELOPER, ALLPLAN ÖSTERREICH GMBH"
+          subtitle="July 2011 - December 2020 | Puch bei Hallein, Salzburg"
+          details={[
+            "Software Developer (C++/C#/Python) in the CAD domain – further development of the CAD software Allplan",
+            "Project leadership and development in the area of automated generation and processing workflows",
+            "Development of complex algorithms for geometric data processing and optimization of software components",
+            "Design and implementation of user interfaces with WPF and Windows Forms",
+            "Development and maintenance of extensions/plugins for Visual Studio and Visual Studio Code to visualize 3D data",
+            "Further development of an internal scripting language",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  <section id="cv-projects" class="section mt-16 max-w-2xl mx-auto">
+    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left mb-4">
+      Projects
+    </h1>
+    <div
+      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
+    >
+      <div>
+        <TimeLine
+          title="PORTFOLIO WEBSITE"
+          subtitle="January 2023"
+          details={[
+            "Development of a personal portfolio website (tteichmeister.dev) using Astro, TailwindCSS, and Preact",
+            "Deployment on Vercel",
+          ]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="CAREER ADVISORY SYSTEM, PERSONALIZED ENVIRONMENTS AND COLLABORATIVE SYSTEMS"
+          subtitle="September 2021 - July 2021 | Hagenberg im Mühlkreis, Oberösterreich (Remote)"
+          details={[
+            "Project member in the research project for karriere.at as Software Developer (Python) and Researcher (10 h/week)",
+            "Design and implementation of a prototype REST API for creating dynamic user profiles using various data sources (ElasticSearch, MySQL, Neo4j)",
+            "Development of a prototype recommender system based on user profiles to generate relevant job suggestions",
+            "Implementation of algorithms for text analysis and information extraction, including structured data processing with GPT-3 and SpaCy",
+          ]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="SHCTT - SUPPORTING HYBRID COLLABORATION FOR THE TEAMS OF TOMORROW, PERSONALIZED ENVIRONMENTS AND COLLABORATIVE (PEEC)"
+          subtitle="August 2020 - August 2021 | Hagenberg im Mühlkreis, Oberösterreich (Remote)"
+          details={[
+            "Project member in a research project with Microsoft Research as Software Developer (C#, Python) and Researcher (20 h/week)",
+            "Development of a WPF prototype for analyzing video and image material to detect different types of collaboration using AI services and frameworks",
+            "Evaluation and use of various AI services, including Google Cloud, Azure Cognitive Services, SpaCy, as well as experimental Microsoft technologies (Microsoft Project Tokyo, Microsoft Platform for Situated Intelligence)",
+            "Implementation of algorithms to reduce errors in face and object recognition for moving objects",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="cv-academic-experience " class="section mt-16 max-w-2xl mx-auto">
+    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left mb-4">
+      Education
+    </h1>
+    <div
+      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
+    >
+      <div>
+        <TimeLine
+          title="UNIVERSITY OF APPLIED SCIENCES UPPER AUSTRIA"
+          subtitle="October 2018 - July 2020 | Hagenberg im Mühlkreis, Oberösterreich"
+          details={["Master of Science (MSc): Software Engineering"]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="UNIVERSITY OF APPLIED SCIENCES UPPER AUSTRIA"
+          subtitle="September 2015 - July 2018 | Hagenberg im Mühlkreis, Oberösterreich"
+          details={["Bachelor of Science (BSc): Software Engineering"]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="HTBLuVA SALZBURG"
+          subtitle="September 2006 - July 2011 | Salzburg, Salzburg"
+          details={["Electronics and Technical Informatics"]}
+        />
+      </div>
+    </div>
+  </section>
+  <section id="cv-publications " class="section mt-16 max-w-2xl mx-auto">
+    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left mb-4">
+      Research Publications
+    </h1>
+    <div
+      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
+    >
+      <div>
+        <TimeLine
+          title="SEMI-AUTOMATED ANALYSIS OF COLLABORATIVE INTERACTION: ARE WE THERE YET?"
+          subtitle="December 2022 | Hagenberg im Mühlkreis, Oberösterreich"
+          details={[
+            "Contributed to a scientific paper and implemented the prototype",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
