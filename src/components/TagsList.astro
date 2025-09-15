@@ -8,6 +8,6 @@ interface Props {
 const { tags } = Astro.props;
 ---
 
-<div class="my-12 flex flex-wrap">
+<div class="my-12 flex flex-wrap mx-auto max-w-lg justify-center">
   {tags.map((tag: string) => <Tag tag={tag} />)}
 </div>
