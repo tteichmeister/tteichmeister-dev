@@ -23,7 +23,7 @@ tags:
     "GitLab",
     "Docker",
   ]
-lastModified: 2025-09-12
+lastModified: 2025-09-18
 ---
 
 ## Table of Contents
@@ -42,7 +42,12 @@ Efficiently matching candidates to roles is a common but complex challenge: user
 
 ## Project work
 
-To tackle this, we designed a time-aware candidate profile that captured changes in user interests and served as the foundation for adaptive job suggestions. The prototype was implemented primarily in Python, integrating various frameworks, services, and multiple data sources to evaluate different modeling strategies. For the first time in our research, we also experimented with [GPT-3](https://platform.openai.com/docs/models), using it for information extraction from both structured and unstructured data. It was also particularly interesting to experiment with diverse data sources such as [Neo4j](https://neo4j.com/) and [ElasticSearch](https://www.elastic.co/de/elasticsearch), which allowed us to explore alternative ways of storing and querying user and job data. By the end of the project, we were able to present several promising options to enhance the existing recommendation system of karriere.at.
+To tackle this, we designed a time-aware candidate profile that captured changes in user interests and served as the foundation for adaptive job suggestions.
+
+The prototype was implemented primarily in Python, integrating various frameworks, services, and multiple data sources to evaluate different modeling strategies.
+For the first time in our research, we also experimented with [GPT-3](https://platform.openai.com/docs/models), using it for information extraction from both structured and unstructured data. It was also particularly interesting to experiment with diverse data sources such as [Neo4j](https://neo4j.com/) and [ElasticSearch](https://www.elastic.co/de/elasticsearch), which allowed us to explore alternative ways of storing and querying user and job data.
+
+By the end of the project, we were able to present several promising options to enhance the existing recommendation system of karriere.at.
 
 ## Additional Links
 
