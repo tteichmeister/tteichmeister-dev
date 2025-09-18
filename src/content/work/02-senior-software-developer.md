@@ -4,7 +4,7 @@ type: "work"
 slug: "senior-software-developer-allplan"
 title: "Senior Software Developer - Allplan Österreich GmbH"
 start: "January 2021"
-location: "Puch bei Halein, AUT"
+location: "Puch bei Hallein, AUT"
 description: "As a Senior Software Developer, my responsibilities grew well beyond pure development work. In addition to leading critical projects, I took on a stronger role in mentoring, training, and guiding teams—shaping both technical outcomes and team growth."
 link:
   title: "Allplan Österreich GmbH"
@@ -24,7 +24,7 @@ tags:
     "Clean Code",
     "Clean Architecture",
   ]
-lastModified: 2025-09-15
+lastModified: 2025-09-18
 ---
 
 ## Table of Contents

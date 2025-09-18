@@ -5,7 +5,7 @@ slug: "software-developer-allplan"
 title: "Software Developer - Allplan Österreich GmbH"
 start: "July 2011"
 end: "December 2020"
-location: "Puch bei Halein, AUT"
+location: "Puch bei Hallein, AUT"
 description: "My career began in 2011 as a software developer at Allplan, where I worked on CAD software development in C++, C# and Python. This role laid the foundation for my professional growth and sparked my long-term passion for software engineering."
 link:
   title: "Allplan Österreich GmbH"
@@ -23,7 +23,7 @@ tags:
     "Visual Studio",
     "Visual Studio Code",
   ]
-lastModified: 2025-09-15
+lastModified: 2025-09-18
 ---
 
 ## Table of Contents
