@@ -6,13 +6,15 @@ import PageTitle from "../components/PageTitle.astro";
 
 <BaseLayout>
   <PageTitle text="Resume" />
-  <section id="cv-work-experience" class="section max-w-2xl mx-auto">
-    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left">
-      Work experience
-    </h1>
-    <div
-      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
-    >
+  <p class="max-w-2xl mx-auto text-color-default">
+    For more than 14 years, I have been driven by a passion for software
+    development. Whether tackling complex problems, exploring new technologies,
+    or facing unfamiliar challenges, I value every opportunity to grow
+    continuously and apply my knowledge in practice.
+  </p>
+  <section id="cv-work-experience" class="section time-line-section">
+    <h1 class="time-line-container-headline">Work experience</h1>
+    <div class="time-line-container">
       <div>
         <TimeLine
           title="SENIOR SOFTWARE DEVELOPER, ALLPLAN ÖSTERREICH GMBH"
@@ -42,13 +44,9 @@ import PageTitle from "../components/PageTitle.astro";
       </div>
     </div>
   </section>
-  <section id="cv-projects" class="section mt-16 max-w-2xl mx-auto">
-    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left mb-4">
-      Projects
-    </h1>
-    <div
-      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
-    >
+  <section id="cv-projects" class="section time-line-section">
+    <h1 class="time-line-container-headline">Projects</h1>
+    <div class="time-line-container">
       <div>
         <TimeLine
           title="PORTFOLIO WEBSITE"
@@ -86,13 +84,9 @@ import PageTitle from "../components/PageTitle.astro";
     </div>
   </section>
 
-  <section id="cv-academic-experience " class="section mt-16 max-w-2xl mx-auto">
-    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left mb-4">
-      Education
-    </h1>
-    <div
-      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
-    >
+  <section id="cv-academic-experience " class="section time-line-section">
+    <h1 class="time-line-container-headline">Education</h1>
+    <div class="time-line-container">
       <div>
         <TimeLine
           title="UNIVERSITY OF APPLIED SCIENCES UPPER AUSTRIA"
@@ -116,13 +110,9 @@ import PageTitle from "../components/PageTitle.astro";
       </div>
     </div>
   </section>
-  <section id="cv-publications " class="section mt-16 max-w-2xl mx-auto">
-    <h1 class="text-2xl font-extrabold uppercase text-secondary text-left mb-4">
-      Research Publications
-    </h1>
-    <div
-      class="relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500"
-    >
+  <section id="cv-publications " class="section time-line-section">
+    <h1 class="time-line-container-headline">Research Publications</h1>
+    <div class="time-line-container">
       <div>
         <TimeLine
           title="SEMI-AUTOMATED ANALYSIS OF COLLABORATIVE INTERACTION: ARE WE THERE YET?"
