@@ -11,7 +11,7 @@ import preact from "@astrojs/preact";
 
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
