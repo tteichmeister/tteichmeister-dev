@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import WorkCard from "../components/WorkCard.astro";
+import AchievmentItem from "../components/AchievmentItem.astro";
 import { getWorkExperiences } from "../utils/api";
-import PageTitle from "../components/Title.astro";
+import PageTitle from "../components/PageTitle.astro";
 
 const workExperiences = await getWorkExperiences();
 ---
@@ -13,7 +13,7 @@ const workExperiences = await getWorkExperiences();
     {
       workExperiences.map((work) => (
         <li class="max-w-md mx-auto">
-          <WorkCard work={work} />
+          <AchievmentItem entry={work} />
         </li>
       ))
     }

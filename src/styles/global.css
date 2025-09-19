@@ -54,6 +54,10 @@ h1 {
 	@apply dark:bg-[#000000] ring-[1px] ring-slate-500 dark:ring-slate-400 shadow-md;
 }
 
+.achievment-title {
+	@apply text-5xl text-secondary my-6 leading-tight;
+}
+
 .more-btn {
 	@apply ring-2 dark:ring-teal-500 ring-teal-700 hover:dark:ring-teal-300 hover:dark:text-teal-300 hover:ring-teal-700 rounded-lg py-1 px-2 justify-center text-center flex w-24;
 }
@@ -69,4 +73,17 @@ h1 {
 
 .content {
 	@apply text-color-default prose-lg md:prose-xl prose-a:text-teal-700 dark:prose-a:text-teal-500 prose-headings:text-slate-800 dark:prose-headings:text-slate-300;
+}
+
+
+.time-line-container {
+	@apply relative before:absolute before:-ml-px before:mt-4 before:-mb-2 before:h-full before:max-h-[calc(100%-1.2rem)] before:w-0.5 before:rounded-full before:bg-teal-700 before:dark:bg-teal-500;
+}
+
+.time-line-container-headline {
+	@apply text-2xl font-extrabold uppercase text-secondary text-left mb-4;
+}
+
+.time-line-section {
+	@apply mt-16 max-w-2xl mx-auto;
 }

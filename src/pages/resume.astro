@@ -1,0 +1,162 @@
+---
+import TimeLine from "../components/TimeLine.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageTitle from "../components/PageTitle.astro";
+---
+
+<BaseLayout>
+  <PageTitle text="Resume" />
+  <p class="max-w-2xl mx-auto text-color-default">
+    For more than 14 years, I have been driven by a passion for software
+    development. Whether tackling complex problems, exploring new technologies,
+    or facing unfamiliar challenges, I value every opportunity to grow
+    continuously and apply my knowledge in practice.
+  </p>
+  <section id="cv-work-experience" class="section time-line-section">
+    <h1 class="time-line-container-headline">Work experience</h1>
+    <div class="time-line-container">
+      <div>
+        <TimeLine
+          title="SENIOR SOFTWARE DEVELOPER, ALLPLAN ÖSTERREICH GMBH"
+          subtitle="since January 2021 | Puch bei Hallein, Salzburg"
+          details={[
+            "Mentoring and professional support of new developers, including onboarding and knowledge transfer",
+            "Conducting regular training sessions for selected development teams with a focus on software architecture and Clean Code",
+            "Project leadership to optimize critical software components in terms of maintainability and readability through the use of Test-Driven Development (TDD)",
+            "Leading and implementing the partially automated migration of MFC and WinForms components to WPF",
+            "Supporting the optimization of performance and software architecture in critical system areas to ensure long-term maintainability",
+          ]}
+        />
+      </div>
+      <div class="mt-12">
+        <TimeLine
+          title="SOFTWARE DEVELOPER, ALLPLAN ÖSTERREICH GMBH"
+          subtitle="July 2011 - December 2020 | Puch bei Hallein, Salzburg"
+          details={[
+            "Software Developer (C++/C#/Python) in the CAD domain – further development of the CAD software Allplan",
+            "Project leadership and development in the area of automated generation and processing workflows",
+            "Development of complex algorithms for geometric data processing and optimization of software components",
+            "Design and implementation of user interfaces with WPF and Windows Forms",
+            "Development and maintenance of extensions/plugins for Visual Studio and Visual Studio Code to visualize 3D data",
+            "Further development of an internal scripting language",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  <section id="cv-projects" class="section time-line-section">
+    <h1 class="time-line-container-headline">Projects</h1>
+    <div class="time-line-container">
+      <div>
+        <TimeLine
+          title="PORTFOLIO WEBSITE"
+          subtitle="January 2023"
+          details={[
+            "Portfolio website (https://www.tteichmeister.dev/) built with Astro, TailwindCSS, and Preact to showcase projects and experience",
+            "Deployed on Vercel for high performance and cost-efficient hosting",
+          ]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="CAREER ADVISORY SYSTEM, PERSONALIZED ENVIRONMENTS AND COLLABORATIVE SYSTEMS"
+          subtitle="September 2021 - July 2021 | Hagenberg im Mühlkreis, Oberösterreich (Remote)"
+          details={[
+            "Project member in the research project for karriere.at as Software Developer (Python) and Researcher (10 h/week)",
+            "Design and implementation of a prototype REST API for creating dynamic user profiles using various data sources (ElasticSearch, MySQL, Neo4j)",
+            "Development of a prototype recommender system based on user profiles to generate relevant job suggestions",
+            "Implementation of algorithms for text analysis and information extraction, including structured data processing with GPT-3 and SpaCy",
+          ]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="SHCTT - SUPPORTING HYBRID COLLABORATION FOR THE TEAMS OF TOMORROW, PERSONALIZED ENVIRONMENTS AND COLLABORATIVE (PEEC)"
+          subtitle="August 2020 - August 2021 | Hagenberg im Mühlkreis, Oberösterreich (Remote)"
+          details={[
+            "Project member in a research project with Microsoft Research as Software Developer (C#/Python) and Researcher (20 h/week)",
+            "Development of a WPF prototype for analyzing video and image material to detect different types of collaboration using AI services and frameworks",
+            "Evaluation and use of various AI services, including Google Cloud, Azure Cognitive Services, SpaCy, as well as experimental Microsoft technologies (Microsoft Project Tokyo, Microsoft Platform for Situated Intelligence)",
+            "Implementation of algorithms to reduce errors in face and object recognition for moving objects",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="cv-academic-experience " class="section time-line-section">
+    <h1 class="time-line-container-headline">Education</h1>
+    <div class="time-line-container">
+      <div>
+        <TimeLine
+          title="UNIVERSITY OF APPLIED SCIENCES UPPER AUSTRIA"
+          subtitle="October 2018 - July 2020 | Hagenberg im Mühlkreis, Oberösterreich"
+          details={["Master of Science (MSc): Software Engineering"]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="UNIVERSITY OF APPLIED SCIENCES UPPER AUSTRIA"
+          subtitle="September 2015 - July 2018 | Hagenberg im Mühlkreis, Oberösterreich"
+          details={["Bachelor of Science (BSc): Software Engineering"]}
+        />
+      </div>
+      <div>
+        <TimeLine
+          title="HTBLuVA SALZBURG"
+          subtitle="September 2006 - July 2011 | Salzburg, Salzburg"
+          details={["Electronics and Technical Informatics"]}
+        />
+      </div>
+    </div>
+  </section>
+  <section id="cv-publications " class="section time-line-section">
+    <h1 class="time-line-container-headline">Research Publications</h1>
+    <div class="time-line-container">
+      <div>
+        <TimeLine
+          title="SEMI-AUTOMATED ANALYSIS OF COLLABORATIVE INTERACTION: ARE WE THERE YET?"
+          subtitle="December 2022 | Hagenberg im Mühlkreis, Oberösterreich"
+          details={[
+            "Contributed to a scientific paper and implemented the prototype",
+          ]}
+        />
+      </div>
+    </div>
+    <section id="cv-skills" class="section time-line-section">
+      <h1 class="time-line-container-headline">Skills</h1>
+      <div class="time-line-container">
+        <div>
+          <TimeLine
+            title="Programming Languages"
+            details={["C++, C#, Python, Java, JavaScript, TypeScript"]}
+          />
+        </div>
+        <div>
+          <TimeLine
+            title="Frameworks"
+            details={[
+              "WPF, WinForms, ASP.NET Core, Blazor, Dapper, Entity Framework, FastAPI, React, Astro, Next.js",
+            ]}
+          />
+        </div>
+        <div>
+          <TimeLine
+            title="Databases"
+            details={[
+              "PostgreSQL, MySQL, Redis, Neo4j, ElasticSearch,  MongoDB",
+            ]}
+          />
+        </div>
+        <div>
+          <TimeLine
+            title="Cloud & Tools"
+            details={[
+              "Azure, Google Cloud, Vercel, Heroku, Docker, GitHub, GitLab, Perforce, Visual Studio, Visual Studio Code, IntelliJ",
+            ]}
+          />
+        </div>
+      </div>
+    </section>
+  </section></BaseLayout
+>

@@ -7,14 +7,19 @@ import Resume from "../components/Resume.astro";
 import Contact from "../components/Contact.astro";
 import Divider from "../components/Divider.astro";
 import Socials from "../components/Socials.astro";
-import SeeAll from "../components/SeeAll.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import WorkCard from "../components/WorkCard.astro";
-import PageTitle from "../components/Title.astro";
+import SeeAllLink from "../components/SeeAllLink.astro";
+import AchievmentItem from "../components/AchievmentItem.astro";
+import PageTitle from "../components/PageTitle.astro";
 import { MAX_COUNT_ITEMS } from "../config";
 
 const latestProjects = await getProjects(MAX_COUNT_ITEMS);
 const latestWorkExperiences = await getWorkExperiences(MAX_COUNT_ITEMS);
+
+function yearsWorked(startYear = 2011) {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  return currentYear - startYear;
+}
 ---
 
 <BaseLayout>
@@ -26,12 +31,10 @@ const latestWorkExperiences = await getWorkExperiences(MAX_COUNT_ITEMS);
             Hi, my name is
           </h4>
         </div>
-        <h1 class={`text-4xl md:text-6xl text-color-primary`}>Thomas</h1>
-        <h1 class={`text-4xl md:text-6xl text-color-secondary`}>
-          Teichmeister
-        </h1>
+        <h1 class="text-4xl md:text-6xl text-color-primary">Thomas</h1>
+        <h1 class="text-4xl md:text-6xl text-color-secondary">Teichmeister</h1>
         <h2
-          class={`text-secondary tracking-wider ml-2 text-center md:text-start`}
+          class="text-secondary tracking-wider ml-2 text-center md:text-start"
         >
           I'm a <a
             href="https://github.com/tteichmeister"
@@ -53,21 +56,23 @@ const latestWorkExperiences = await getWorkExperiences(MAX_COUNT_ITEMS);
     </div>
   </div>
   <p class="mb-16">
-    Hi there! I am a software developer with 11+ years of experience, and I
-    absolutely love programming. As someone who is always interested in learning
-    new things, I have a particular interest in web technologies. <br /><br />
-
-     Currently, I work at <a
+    Hi there! I am a software developer with more than {yearsWorked()} years of professional
+    experience, and I am genuinely passionate about programming. <br />What
+    motivates me most is the opportunity to take on new challenges, solve
+    complex problems, and continuously expand my knowledge by learning new
+    tools, concepts, and approaches. <br />
+    <br /> Currently, I work at <a
       class="text-color-secondary"
       href="https://www.allplan.com/at/loesungen/herstellung-von-fertigteilen"
-      >Allplan Software Engineering GmbH</a
+      >Allplan Österreich GmbH</a
     > as a <a
       class="text-color-secondary"
       href="/work/senior-software-developer-allplan"
       >Senior Software Developer</a
-    >, where I mainly use C++ and C# in my day-to-day work. For more information
-    about my work experience and projects, please see the details below, where I
-    provide specific information about my accomplishments.
+    >, where I mainly use C++, C# and Python in my daily work. Over the years, I
+    have been involved in several key projects, taken on increasing
+    responsibilities, and grown continuously both professionally and personally. <br
+    /><br />
   </p>
 
   <section class="gap-2 mx-auto inline-flex items-center justify-center w-full">
@@ -87,14 +92,18 @@ const latestWorkExperiences = await getWorkExperiences(MAX_COUNT_ITEMS);
       {
         latestProjects.map((project) => (
           <li class="fadeup fade-delay">
-            <ProjectCard project={project} />
+            <AchievmentItem entry={project} />
           </li>
         ))
       }
     </ul>
-    <div class="mt-6 mx-6 fadeup fade-delay">
-      <SeeAll text="All projects" url="/projects" />
-    </div>
+    {
+      latestProjects.length > MAX_COUNT_ITEMS && (
+        <div class="mt-6 mx-6 fadeup fade-delay">
+          <SeeAllLink text="All projects" url="/projects" />
+        </div>
+      )
+    }
   </section>
   <section id="latest-work-experiences" class="section fadeup">
     <div class="fadeup fade-delay">
@@ -104,14 +113,18 @@ const latestWorkExperiences = await getWorkExperiences(MAX_COUNT_ITEMS);
       {
         latestWorkExperiences.map((work) => (
           <li class="fadeup fade-delay">
-            <WorkCard work={work} />
+            <AchievmentItem entry={work} />
           </li>
         ))
       }
     </ul>
-    <div class="mt-6 mx-6 fadeup fade-delay">
-      <SeeAll text="All experiences" url="/work" />
-    </div>
+    {
+      latestWorkExperiences.length > MAX_COUNT_ITEMS && (
+        <div class="mt-6 mx-6 fadeup fade-delay">
+          <SeeAllLink text="All experiences" url="/work" />
+        </div>
+      )
+    }
   </section>
 </BaseLayout>
 

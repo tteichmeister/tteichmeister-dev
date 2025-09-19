@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  details: string[];
+}
+const { title, subtitle, details } = Astro.props;
+---
+
+<div class="flex mt-12">
+  <div>
+    <span class="w-4 h-4 background-color block rounded-full mt-1"></span>
+    <span
+      class="relative -left-2 -top-3 h-4 w-4 rounded-full bg-teal-700 dark:bg-teal-500 block"
+    ></span>
+  </div>
+  <div class="bd-grid px-5">
+    <h2 class="text-xl font-extrabold uppercase text-secondary text-left">
+      {title}
+    </h2>
+    {
+      subtitle ? (
+        <span class="px-1 text-md text-color-default text-left">
+          {subtitle}
+        </span>
+      ) : null
+    }
+    <ul class="list-disc pl-5">
+      {details.map((d) => <li>{d}</li>)}
+    </ul>
+  </div>
+</div>
