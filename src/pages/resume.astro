@@ -123,5 +123,40 @@ import PageTitle from "../components/PageTitle.astro";
         />
       </div>
     </div>
-  </section>
-</BaseLayout>
+    <section id="cv-skills" class="section time-line-section">
+      <h1 class="time-line-container-headline">Skills</h1>
+      <div class="time-line-container">
+        <div>
+          <TimeLine
+            title="Programming Languages"
+            details={["C++, C#, Python, Java, JavaScript, TypeScript"]}
+          />
+        </div>
+        <div>
+          <TimeLine
+            title="Frameworks"
+            details={[
+              "WPF, WinForms, ASP.NET Core, Blazor, Dapper, Entity Framework, FastAPI, React, Astro, Next.js",
+            ]}
+          />
+        </div>
+        <div>
+          <TimeLine
+            title="Databases"
+            details={[
+              "PostgreSQL, MySQL, Redis, Neo4j, ElasticSearch,  MongoDB",
+            ]}
+          />
+        </div>
+        <div>
+          <TimeLine
+            title="Cloud & Tools"
+            details={[
+              "Azure, Google Cloud, Vercel, Heroku, Docker, GitHub, GitLab, Perforce, Visual Studio, Visual Studio Code, IntelliJ",
+            ]}
+          />
+        </div>
+      </div>
+    </section>
+  </section></BaseLayout
+>

@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   details: string[];
 }
 const { title, subtitle, details } = Astro.props;
@@ -18,7 +18,13 @@ const { title, subtitle, details } = Astro.props;
     <h2 class="text-xl font-extrabold uppercase text-secondary text-left">
       {title}
     </h2>
-    <span class="px-1 text-md text-color-default text-left">{subtitle}</span>
+    {
+      subtitle ? (
+        <span class="px-1 text-md text-color-default text-left">
+          {subtitle}
+        </span>
+      ) : null
+    }
     <ul class="list-disc pl-5">
       {details.map((d) => <li>{d}</li>)}
     </ul>
