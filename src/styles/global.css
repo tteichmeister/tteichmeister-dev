@@ -17,6 +17,10 @@ h1 {
 }
 
 
+.link {
+    @apply underline decoration-dotted underline-offset-2 text-teal-700 dark:text-teal-500 hover:dark:text-teal-300 hover:text-teal-900;
+}
+
 .project-title {
 	font-family:"Poppins", sans-serif; font-weight: 700;
 }
@@ -59,7 +63,7 @@ h1 {
 }
 
 .more-btn {
-	@apply ring-2 dark:ring-teal-500 ring-teal-700 hover:dark:ring-teal-300 hover:dark:text-teal-300 hover:ring-teal-700 rounded-lg py-1 px-2 justify-center text-center flex w-24;
+	@apply ring-2 dark:ring-teal-500 ring-teal-700 hover:dark:ring-teal-300 hover:dark:text-teal-300 hover:text-teal-900 hover:ring-teal-900 rounded-lg py-1 px-2 justify-center text-center flex w-24;
 }
 
 .hover-link {
@@ -72,7 +76,7 @@ h1 {
 }
 
 .content {
-	@apply text-color-default prose-lg md:prose-xl prose-a:text-teal-700 dark:prose-a:text-teal-500 prose-headings:text-slate-800 dark:prose-headings:text-slate-300;
+	@apply text-color-default prose-lg md:prose-xl prose-a:underline prose-a:decoration-dotted prose-a:underline-offset-2 prose-a:text-teal-700 hover:prose-a:text-teal-900 dark:prose-a:text-teal-500 hover:dark:prose-a:text-teal-300 prose-headings:text-slate-800 dark:prose-headings:text-slate-300;
 }
 
 
